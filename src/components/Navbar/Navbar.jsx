@@ -45,9 +45,10 @@ export default function Navbar() {
             <NavLink
               to={link.path} 
               key={index}
-              className= {({isActive}) => `flex items-center gap-x-2  px-5 rounded-full py-2.5 cursor-pointer ${isActive ? "bg-[#353434]" : ""} hover:bg-[#353434] text-[0.9rem] font-medium`}
+              className= {({isActive}) => `flex items-center gap-x-2  px-5 rounded-full py-2.5 cursor-pointer ${isActive ? "bg-[#353434]" : ""} hover:bg-[#353434] text-sm
+              36+5 font-medium`}
             >
-              <span className="text-[1.1rem]">{link.icon}</span>
+              <span className="text-[1rem]">{link.icon}</span>
               {link.label}
             </NavLink>
           ))}
