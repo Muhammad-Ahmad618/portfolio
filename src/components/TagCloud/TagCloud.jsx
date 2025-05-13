@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import { RiReactjsFill } from "react-icons/ri"
 
 const TagSphere = () => {
   const isInitialized = useRef(false); // <-- flag
@@ -9,9 +10,9 @@ const TagSphere = () => {
 
     const container = '.tagcloud';
     const texts = [
-      'JavaScript', 'React', 'Node.js', 'TypeScript',
+      'JavaScript', 'React', 'Python', 'Figma',
       'HTML5', 'CSS3', 'MongoDB', 'GitHub',
-      'Next.js', 'Express.js', 'Docker', 'AWS'
+      'Tailwind CSS', 'Express.js', 'BootStrap CSS', 'WordPress'
     ];
 
     const options = {
