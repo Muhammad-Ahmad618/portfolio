@@ -7,7 +7,7 @@ import { Typewriter } from "react-simple-typewriter";
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen my-20">
+    <div className="min-h-screen my-20 max-w-screen-2xl mx-auto">
       <div className="my-20 px-10 font-primary flex items-center h-[70vh]">
         <div className="text-white font-bold text-[3rem]">
           <motion.h1
