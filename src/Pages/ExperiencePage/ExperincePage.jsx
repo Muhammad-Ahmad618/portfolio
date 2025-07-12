@@ -1,5 +1,6 @@
 import React from 'react'
 import GradientText from '../../components/GradientText/GradientText'
+import { IoCalendarClearOutline } from "react-icons/io5";
 
 export default function ExperincePage() {
 
@@ -40,15 +41,16 @@ export default function ExperincePage() {
       <div className='grid lg:grid-cols-2 gap-x-7 2xl:gap-x-14 gap-y-10 my-16 justify-self-center'>
       {experience.map((exp,index) => (
         <div key={index} 
-        className={`w-full mx-auto ${index % 2 == 0 ? 'lg:col-start-1 lg:justify-self-start':'lg:col-start-2 lg:justify-self-end'} row-auto bg-white/5 backdrop-blur-md border border-white/20 text-white p-10 rounded-2xl shadow shadow-purple-500`}
+        className={`w-full mx-auto ${index % 2 == 0 ? 'lg:col-start-1 lg:justify-self-start':'lg:col-start-2 lg:justify-self-end'} row-auto bg-white/10 backdrop-blur-md border border-purple-400 text-white p-10 rounded-2xl shadow-lg shadow-purple-500/30`}
         style={{gridRow:`${index + 1}`}}
         >
               
           <h3 className='text-white bg-clip-text text-[1.4rem] font-bold'>{exp.role}</h3>
           <div className='py-4 flex justify-between items-center'>
           <p className='font-medium text-sm bg-gradient-to-r from-gray-400 via-gray-100 to-white bg-clip-text text-transparent'>{exp.company}</p>
-          <span className='bg-gradient-to-r from-purple-600 to-indigo-700 rounded-full'>
-          <p className='text-[0.8rem] font-medium py-1 px-5'>{exp.duration}</p>
+          <span className='bg-gradient-to-r flex items-center px-5 gap-x-3 from-purple-600 to-indigo-700 rounded-full'>
+          <IoCalendarClearOutline/>
+          <p className='text-[0.8rem] font-medium py-1'>{exp.duration}</p>
           </span>
 
           </div> 
