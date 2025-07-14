@@ -43,7 +43,7 @@ export default function LandingPage() {
           <h3 className="text-[1.1rem] font-medium py-3">Skilled in React.js | Tailwind CSS | UI/UX Design.</h3>
           </Fade>
           
-          <div className="my-10 flex w-full gap-x-10">
+          <div className="my-10 flex w-full gap-x-5">
             
           <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-1 rounded-xl flex max-w-[9rem] w-full">
             <button className="bg-[#161515] text-base font-medium rounded-lg w-full cursor-pointer py-2.5 hover:bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">
@@ -51,7 +51,7 @@ export default function LandingPage() {
             </button>
           </div>
 
-          <a href="/Muhammad Ahmad (Resume-software Engineer).pdf" download className="flex items-center justify-center gap-x-2 border-2 border-gray-300 text-base font-medium px-5 rounded-xl hover:bg-[#252424] cursor-pointer duration-300 ease-in-out transition-all">
+          <a href="/Muhammad Ahmad (Software Engineer 2).pdf" download className="flex items-center justify-center gap-x-2 border-2 border-gray-300 text-base font-medium px-5 rounded-xl hover:bg-[#252424] cursor-pointer duration-300 ease-in-out transition-all">
             Download Resume <IoMdDownload className="text-[1.2rem]"/>
           </a>
           
