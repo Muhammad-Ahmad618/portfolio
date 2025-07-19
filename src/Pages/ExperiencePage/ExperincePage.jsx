@@ -6,9 +6,9 @@ export default function ExperincePage() {
 
     const experience = [
       {
-        role: "UI/UX Intern",
-        company:'NUEXUS Technologies',
-        duration: 'July 2024 - Sept 2024',
+        role: "Wordpress Developer",
+        company:'JK Media Digital Marketing',
+        duration: 'Feb 2025 - Present',
         description: [
           "Designed intuitive and responsive UI layouts for the GearBox e-commerce platform using Figma",
           "Developed front-end components in React JS with Tailwind CSS, enhancing cross-device compatibility"
@@ -16,9 +16,9 @@ export default function ExperincePage() {
       }
       ,
       {
-        role: "Wordpress Developer",
-        company:'JK Media Digital Marketing',
-        duration: 'Feb 2025 - Present',
+        role: "UI/UX Intern",
+        company:'NUEXUS Technologies',
+        duration: 'July 2024 - Sept 2024',
         description: [
           "Designed intuitive and responsive UI layouts for the GearBox e-commerce platform using Figma",
           "Developed front-end components in React JS with Tailwind CSS, enhancing cross-device compatibility"
