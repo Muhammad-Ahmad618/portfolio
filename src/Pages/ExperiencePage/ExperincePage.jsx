@@ -41,7 +41,7 @@ export default function ExperincePage() {
       <div className='grid lg:grid-cols-2 gap-x-7 2xl:gap-x-14 gap-y-10 my-16 justify-self-center'>
       {experience.map((exp,index) => (
         <div key={index} 
-        className={`w-full mx-auto ${index % 2 == 0 ? 'lg:col-start-1 lg:justify-self-start':'lg:col-start-2 lg:justify-self-end'} row-auto bg-white/10 backdrop-blur-md border border-purple-400 text-white p-10 rounded-2xl shadow-lg shadow-purple-500/30`}
+        className={`w-full mx-auto ${index % 2 == 0 ? 'lg:col-start-1 lg:justify-self-start':'lg:col-start-2 lg:justify-self-end'} row-auto bg-gradient-to-r from-gray-950 to-gray-900 border border-purple-400 text-white p-10 rounded-2xl shadow-lg shadow-purple-500/30`}
         style={{gridRow:`${index + 1}`}}
         >
               

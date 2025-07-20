@@ -17,7 +17,7 @@ export default function React_contact_form() {
     console.log(watch("example"))
 
   return (
-    <div className='border-2 border-purple-400 bg-white/10 backdrop-blur-md shadow-md shadow-purple-500/30 p-10 rounded-2xl'>
+    <div className='border-2 border-purple-400 bg-gradient-to-r from-gray-950 to-gray-900 shadow-md shadow-purple-500/30 p-10 rounded-2xl'>
 
         <form onSubmit={handleSubmit(onsubmit)} className='flex flex-col gap-y-10'>
            
