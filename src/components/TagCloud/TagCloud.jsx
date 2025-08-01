@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { RiReactjsFill } from "react-icons/ri"
 
 const TagSphere = () => {
   const isInitialized = useRef(false); // <-- flag
@@ -32,7 +31,7 @@ const TagSphere = () => {
       className="tagcloud mx-auto"
       style={{
         width: "450px",
-        height: "500px",
+        height: "450px",
         color: "white",
       }}
     />
