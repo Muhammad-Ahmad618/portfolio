@@ -1,41 +1,65 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Cloud, renderSimpleIcon, fetchSimpleIcons } from 'react-icon-cloud';
 
-const TagSphere = () => {
-  const isInitialized = useRef(false); // <-- flag
+const useIcons = (slugs) => {
+  const [icons, setIcons] = useState();
 
   useEffect(() => {
-    if (isInitialized.current) return; // prevent double init
-    isInitialized.current = true;
-
-    const container = '.tagcloud';
-    const texts = [
-      'JavaScript', 'React', 'Python', 'Figma',
-      'HTML5', 'CSS3', 'MongoDB', 'GitHub',
-      'Tailwind CSS', 'Express.js', 'BootStrap CSS', 'WordPress'
-    ];
-
-    const options = {
-      radius: 200,
-      maxSpeed: 'fast',
-      initSpeed: 'normal',
-      keep: true,
-    };
-
-    if (window.TagCloud) {
-      window.TagCloud(container, texts, options);
-    }
+    fetchSimpleIcons({ slugs }).then(setIcons);
   }, []);
 
-  return (
-    <div
-      className="tagcloud mx-auto"
-      style={{
-        width: "450px",
-        height: "450px",
-        color: "white",
-      }}
-    />
-  );
+  if (icons) {
+    return Object.values(icons.simpleIcons).map((icon, index) =>
+      renderSimpleIcon({
+        icon,
+        size: 68,
+        aProps: {
+          onClick: (e) => e.preventDefault(),
+          key: index, // ✅ to avoid React key warnings
+          title: icon.title,
+        },
+      })
+    );
+  }
+
+  return <a>Loading</a>;
 };
 
-export default TagSphere;
+const slugs = [
+  'html5',
+  'css3',
+  'javascript',
+  'bootstrap',
+  'tailwindcss',
+  'react',
+  'postman',
+  'git',
+  'python',
+  'pandas',
+  'numpy',
+  'figma',
+  'axios',
+  'wordpress'
+];
+
+const DynamicIconCloud = () => {
+  const icons = useIcons(slugs);
+
+  return (
+  <div className='flex justify-center my-10'>
+  <Cloud
+     options={{
+      tooltip: true,
+      depth: 1,
+      initial: [0.1, -0.1],
+      reverse: true,
+      maxSpeed: 0.05,
+      minSpeed: 0.02,
+      wheelZoom: false,
+      zoom: 0.9,
+    }}>{icons}</Cloud>
+  </div>
+  )
+};
+
+export default DynamicIconCloud;

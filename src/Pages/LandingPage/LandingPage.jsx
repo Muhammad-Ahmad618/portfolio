@@ -51,7 +51,7 @@ export default function LandingPage() {
             </button>
           </div>
 
-          <a href="/Muhammad Ahmad (Software Engineer 2).pdf" download className="flex items-center justify-center gap-x-2 border-2 border-gray-300 text-base font-medium px-5 rounded-xl hover:bg-[#252424] cursor-pointer duration-300 ease-in-out transition-all">
+          <a href="/Muhammad Ahmad (Front End Developer).pdf" download className="flex items-center justify-center gap-x-2 border-2 border-gray-300 text-base font-medium px-5 rounded-xl hover:bg-[#252424] cursor-pointer duration-300 ease-in-out transition-all">
             Download Resume <IoMdDownload className="text-[1.2rem]"/>
           </a>
           

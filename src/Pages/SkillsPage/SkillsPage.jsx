@@ -58,16 +58,15 @@ export default function SkillsPage() {
       name:"Figma"
     },
     {
-      image:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-original.svg",
+      image:"https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg",
       name:"WordPress"
     },
   ]
 
   return (
     <div className='w-full mx-auto max-w-screen-2xl'>
-      <TagCloud />
-      <div>
-       <h1 className='flex text-white gap-x-2 text-[3rem] font-semibold justify-center'>My
+      <div className='mt-20'>
+       <h1 className='flex text-white gap-x-2 text-[3rem] font-bold justify-center'>My
        <GradientText
        colors={["#ec4899","#c654ba","#a855f7", "#7c5ef5" ,"#6366f1",]}
        animationSpeed={3}
@@ -76,13 +75,13 @@ export default function SkillsPage() {
        Skills
        </GradientText>
        </h1>
-       <div className='grid grid-cols-3 row-auto justify-items-center my-20 gap-16 max-w-screen-xl mx-auto'>
+       <div className='grid grid-cols-3 row-auto justify-items-center my-20 gap-10 max-w-screen-xl mx-auto'>
           {technologies.map((tech,index) => (
-           <div key={index} className='flex flex-col items-center space-y-5 bg-white/10 p-10 w-full rounded-xl'>
+           <div key={index} className='flex flex-col items-center space-y-5 bg-white/10 p-10 w-full rounded-xl transition-all duration-300 ease-in-out hover:scale-105'>
             <img src={tech.image} alt={tech.name} className='w-[6rem]'/>
-            <h4 className='text-white'>{tech.name}</h4> 
+            <h4 className='text-white font-semibold text-[1.2rem]'>{tech.name}</h4> 
            </div>
-          ))}
+          ))} 
        </div>
       </div>
 
