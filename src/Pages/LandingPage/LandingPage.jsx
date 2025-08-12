@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { motion } from "framer-motion";
 import {Fade} from "react-awesome-reveal"
 import GradientText from "../../components/GradientText/GradientText";
@@ -6,8 +6,10 @@ import { IoMdDownload } from "react-icons/io"
 import { Typewriter } from "react-simple-typewriter";
 
 export default function LandingPage() {
+
   return (
-    <div className="min-h-screen my-20 max-w-screen-2xl mx-auto ">
+    <>
+    <div className="my-20 max-w-screen-2xl mx-auto">
       <div className="my-20 px-10 font-primary flex items-center h-[70vh]">
         <div className="text-white font-bold text-[3rem]" >
           <motion.h1
@@ -63,5 +65,6 @@ export default function LandingPage() {
         <div></div>
       </div>
     </div>
+    </>
   );
 }
