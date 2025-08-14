@@ -4,14 +4,15 @@ import {Fade} from "react-awesome-reveal"
 import GradientText from "../../components/GradientText/GradientText";
 import { IoMdDownload } from "react-icons/io"
 import { Typewriter } from "react-simple-typewriter";
+import ProfileCode from "../../components/ProfileCode/ProfileCode";
 
 export default function LandingPage() {
 
   return (
     <>
     <div className="my-20 max-w-screen-2xl mx-auto">
-      <div className="my-20 px-10 font-primary flex items-center h-[70vh]">
-        <div className="text-white font-bold text-[3rem]" >
+      <div className="my-20 px-10 font-primary flex items-center h-[70vh] gap-x-20 ">
+        <div className="text-white font-bold text-[3rem] basis-[45%]" >
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -61,8 +62,24 @@ export default function LandingPage() {
           </div>
            
         </div>
+         {/* Auto type code */}
+        <div className="basis-[45%] h-full ">
+          
+          <div className="bg-gradient-to-r from-gray-950 to-gray-900 p-5 rounded-t-xl flex gap-x-5 items-center">
+            <ul className="flex gap-x-3">
+              <li className="p-1.5 rounded-[100%] bg-red-600"></li>
+              <li className="p-1.5 rounded-[100%] bg-yellow-600"></li>
+              <li className="p-1.5 rounded-[100%] bg-green-600"></li>
+            </ul>
+            <p className="text-gray-400 text-xs ">Developer.jsx</p>
+          </div>
 
-        <div></div>
+          <div className="bg-gray-900 p-5 rounded-b-xl min-h-[60vh]">
+            <ProfileCode/>
+
+          </div>
+
+        </div>
       </div>
     </div>
     </>
