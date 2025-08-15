@@ -10,9 +10,9 @@ export default function LandingPage() {
 
   return (
     <>
-    <div className="my-20 max-w-screen-2xl mx-auto">
-      <div className="my-20 px-10 font-primary flex items-center h-[70vh] gap-x-20 ">
-        <div className="text-white font-bold text-[3rem] basis-[45%]" >
+    <div className="my-28 md:my-20 max-w-screen-2xl mx-auto">
+      <div className="px-5 sm:px-10 font-primary flex items-start lg:items-center flex-col lg:flex-row gap-y-10 md:gap-x-20 ">
+        <div className="text-white font-bold text-[3rem] w-full basis-[100%] lg:basis-[45%]" >
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -21,7 +21,7 @@ export default function LandingPage() {
             Hello!
           </motion.h1>
 
-          <div className="flex gap-x-3">
+          <span className="flex gap-x-3 flex-wrap ">
             <h1>I'm </h1>
             <GradientText
               colors={["#ec4899","#c654ba","#a855f7", "#7c5ef5" ,"#6366f1",]}
@@ -30,8 +30,8 @@ export default function LandingPage() {
             >
               Muhammad Ahmad
             </GradientText>
-          </div>
-          <h1 className="text-2xl font-semibold">
+          </span>
+          <h1 className="text-xl sm:text-2xl font-semibold">
             <Typewriter
               words={["Software Engineer", "Front End Developer", "UI/UX Designer"]}
               loop={true}
@@ -43,10 +43,10 @@ export default function LandingPage() {
             />
           </h1>
           <Fade direction="up" triggerOnce={true} duration={1500}>
-          <h3 className="text-[1.1rem] font-medium py-3">Skilled in React.js | Tailwind CSS | UI/UX Design.</h3>
+          <h3 className="text-base sm:text-[1.1rem] font-medium py-3">Skilled in React.js | Tailwind CSS | UI/UX Design.</h3>
           </Fade>
           
-          <div className="my-10 flex w-full gap-x-5">
+          <div className="my-5 sm:my-10 flex flex-wrap w-full gap-y-5 min-[400px]:gap-x-5">
             
           <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-1 rounded-xl flex max-w-[9rem] w-full">
             <button className="bg-[#161515] text-base font-medium rounded-lg w-full cursor-pointer py-2.5 hover:bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">
@@ -54,7 +54,7 @@ export default function LandingPage() {
             </button>
           </div>
 
-          <a href="/Muhammad Ahmad (Front End Developer).pdf" download className="flex items-center justify-center gap-x-2 border-2 border-gray-300 text-base font-medium px-5 rounded-xl hover:bg-[#252424] cursor-pointer duration-300 ease-in-out transition-all">
+          <a href="/Muhammad Ahmad (Front End Developer).pdf" download className="flex items-center justify-center gap-x-2 border-2 border-gray-300 text-base font-medium px-5 rounded-xl hover:bg-[#252424] py-4 cursor-pointer duration-300 ease-in-out transition-all">
             Download Resume <IoMdDownload className="text-[1.2rem]"/>
           </a>
           
@@ -63,7 +63,7 @@ export default function LandingPage() {
            
         </div>
          {/* Auto type code */}
-        <div className="basis-[45%] h-full ">
+        <div className="basis-[100%] lg:basis-[45%] h-full w-full ">
           
           <div className="bg-gradient-to-r from-gray-950 to-gray-900 p-5 rounded-t-xl flex gap-x-5 items-center">
             <ul className="flex gap-x-3">

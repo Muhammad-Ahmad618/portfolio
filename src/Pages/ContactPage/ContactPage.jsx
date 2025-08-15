@@ -14,9 +14,9 @@ export default function ContactPage() {
        >Get in Touch</GradientText>
        </div>
        
-       <div className='flex justify-between items-start gap-x-16 mt-20'>
+       <div className='flex justify-between flex-wrap items-center gap-y-10 md:gap-x-16 mt-20'>
 
-        <div className='text-white basis-[45%]'>
+        <div className='text-white basis-[100%] md:basis-[45%] w-full'>
           <h3 className='text-[1.8rem] pb-10 font-semibold bg-gradient-to-r from-purple-500 to-red-600 bg-clip-text text-transparent'>Have any Question or Wanna Work Together ? Drop me a Message</h3>
           <div className='flex items-center gap-x-6'>
              <div className='p-5 bg-white/20 backdrop-blur-md inline-block rounded-2xl'>
@@ -27,7 +27,7 @@ export default function ContactPage() {
         </div>
 
 {/* Contact Form Section */}
-        <div className='basis-[45%]'>
+        <div className='basis-[100%] md:basis-[45%] w-full'>
          <ContactForm/>
 
         </div>
