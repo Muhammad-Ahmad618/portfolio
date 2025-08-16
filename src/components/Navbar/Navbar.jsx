@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { IoIosHome } from "react-icons/io";
 import { FaCode } from "react-icons/fa";
 import { FaLaptopCode } from "react-icons/fa";
@@ -10,6 +10,7 @@ import { Fade } from "react-awesome-reveal";
 import SideMenu from "../SideMenu/SideMenu"
 
 export default function Navbar() {
+
   const [sideMenu, setSideMenu] = useState(false);
 
   const navLinks = [
@@ -42,11 +43,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="hidden md:block">
+      <div className="hidden px-5 md:block">
       <Fade direction="down" duration={1000} delay={200}>
-      <div className="border-0 max-w-[50rem] font-primary md:mx-5 lg:mx-auto my-0 md:my-7 p-[2px] md:rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-lg ">
+      <div className="border-0 max-w-[50rem] font-primary md:mx-auto my-0 md:my-7 p-[2px] md:rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-lg ">
       <div className="bg-[#161515] py-2 md:rounded-full">
-        <ul className=" text-white flex justify-center gap-x-5 lg:gap-x-10">
+        <ul className=" text-white flex justify-center gap-x-6 lg:gap-x-10">
           {navLinks.map((link, index) => (
             <NavLink
               to={link.path}

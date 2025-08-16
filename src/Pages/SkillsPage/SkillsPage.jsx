@@ -64,9 +64,9 @@ export default function SkillsPage() {
   ]
 
   return (
-    <div className='w-full mx-auto max-w-screen-2xl'>
-      <div className='mt-20'>
-       <h1 className='flex text-white gap-x-2 text-[3rem] font-bold justify-center'>My
+    <div className='w-full mx-auto max-w-screen-2xl px-5 md:px-20'>
+      <div className='mt-20'>1
+       <h1 className='flex text-white gap-x-2 text-[2rem] md:text-[3rem] font-bold justify-center'>My
        <GradientText
        colors={["#ec4899","#c654ba","#a855f7", "#7c5ef5" ,"#6366f1",]}
        animationSpeed={3}
@@ -75,10 +75,10 @@ export default function SkillsPage() {
        Skills
        </GradientText>
        </h1>
-       <div className='grid grid-cols-3 row-auto justify-items-center my-20 gap-10 max-w-screen-xl mx-auto'>
+       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto justify-items-center my-20 gap-5 lg:gap-10 max-w-screen-xl mx-auto'>
           {technologies.map((tech,index) => (
            <div key={index} className='flex flex-col items-center space-y-5 bg-white/10 p-10 w-full rounded-xl transition-all duration-300 ease-in-out hover:scale-105'>
-            <img src={tech.image} alt={tech.name} className='w-[6rem]'/>
+            <img src={tech.image} alt={tech.name} className='w-[5rem] sm:w-[6rem]'/>
             <h4 className='text-white font-semibold text-[1.2rem]'>{tech.name}</h4> 
            </div>
           ))} 

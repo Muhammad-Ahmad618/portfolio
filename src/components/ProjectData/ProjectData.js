@@ -39,11 +39,6 @@ export const projects = [
         color: "text-white",
       },
       {
-        name: "Vite",
-        icon: SiVite,
-        color: "text-white",
-      },
-      {
         name: "Form API",
         icon: SiGoogleforms,
         color: "text-green-500",

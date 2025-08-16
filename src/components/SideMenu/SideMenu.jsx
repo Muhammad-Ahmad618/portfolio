@@ -2,8 +2,11 @@ import React from "react";
  import { NavLink } from "react-router-dom";
 
 function SideMenu({ navlinks, toggle }) {
+
+  console.log(toggle)
+
   return (
-    <div className={`flex md:hidden w-[70vw] min-h-screen ${toggle ? '-translate-x-full': 'translate-x-0'} transition-all duration-300 ease-in-out fixed bg-black/70 backdrop-blur-sm z-20 top-[4.2rem]`}>
+    <div className={`flex md:hidden w-[70vw] min-h-screen ${toggle == true ? 'translate-x-0': '-translate-x-full'} transition-all duration-300 ease-in-out fixed bg-black/70 backdrop-blur-sm z-20 top-[4.2rem]`}>
       <ul className="text-white p-5 space-y-3 w-full">
         {navlinks.map((link, index) => (
           <NavLink

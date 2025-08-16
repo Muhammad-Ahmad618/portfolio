@@ -4,7 +4,7 @@ import {projects} from '../../components/ProjectData/ProjectData'
 
 export default function ProjectsPage() {
   return (
-    <div className="max-w-screen-2xl mx-auto my-20 px-20">
+    <div className="max-w-screen-2xl mx-auto my-20 px-5 sm:px-10 lg:px-20">
       <div className="text-[3rem] font-bold flex justify-center">
         <GradientText
           colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
@@ -15,25 +15,25 @@ export default function ProjectsPage() {
         </GradientText>
       </div>
 
-      <div className="grid grid-cols-2 2xl:grid-cols-3 auto-cols-max my-20 gap-x-5 gap-y-10 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-cols-max my-20 gap-5 ">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="bg-gradient-to-r from-gray-950 to-gray-900 rounded-xl h-auto w-full"
+            className="bg-gradient-to-r from-gray-950 to-gray-900 rounded-xl pb-10 h-auto w-full"
           >
-            <div className="p-2 h-[50%]">
+            <div className="p-2">
               <img
                 src={project.image_path}
-                alt="thumbnail"
+                alt={project.title}
                 className="rounded-xl w-full h-full object-cover"
               />
             </div>
-            <div className="h-[20rem] w-full rounded-b-xl p-5">
+            <div className="h-auto w-full rounded-b-xl p-5">
               <div className=" space-y-3 h-full rounded-b-xl">
                 <h2 className="text-white text-[1.5rem] font-bold">
                   {project.title}
                 </h2>
-                <p className="text-gray-500 line-clamp-5">
+                <p className="text-gray-500 line-clamp-4 sm:line-clamp-5">
                   {project.description}
                 </p>
                 <div className="flex gap-2 my-4 w-full flex-wrap">
