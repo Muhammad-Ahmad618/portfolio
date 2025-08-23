@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect, useRef} from "react";
 import { IoIosHome } from "react-icons/io";
 import { FaCode } from "react-icons/fa";
 import { FaLaptopCode } from "react-icons/fa";
@@ -8,10 +8,41 @@ import { NavLink } from "react-router-dom";
 import { RiMenu3Line } from "react-icons/ri";
 import { Fade } from "react-awesome-reveal";
 import SideMenu from "../SideMenu/SideMenu"
+import { useLocation } from "react-router-dom";
 
 export default function Navbar() {
 
+  const location = useLocation()
+   
   const [sideMenu, setSideMenu] = useState(false);
+  const DrawerRef = useRef(null)
+
+  useEffect(() => {
+      
+    setSideMenu(false)
+    window.scrollTo(0,0)
+  
+  },[location.pathname])
+
+
+  useEffect(() => {
+
+    const handleClickOutside = (event) => {
+     
+      if(DrawerRef.current && !DrawerRef.current.contains(event.target)){
+       
+       setSideMenu(false)  
+       }
+    }
+
+    if(sideMenu){
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+    
+     return(() => document.removeEventListener('mousedown', handleClickOutside))
+
+
+  },[sideMenu])
 
   const navLinks = [
     {
@@ -57,7 +88,7 @@ export default function Navbar() {
               }) => `flex items-center gap-x-2 px-5 rounded-full py-2.5 cursor-pointer ${
                 isActive ? "bg-[#353434]" : ""
               } hover:bg-[#353434] text-sm
-              36+5 font-medium transition-all duration-300 ease-in`}
+               font-medium transition-all duration-300 ease-in`}
             >
               <span className="text-[1rem]">{link.icon}</span>
               {link.label}
@@ -74,13 +105,13 @@ export default function Navbar() {
       <div className="bg-[#161515] py-2">
        <div className="flex items-center justify-between px-5 md:hidden">
           <img
-            src="/logo.png"
+            src="/Logo.webp"
             alt="M-ahmad"
-            className="invert-100 max-w-[3rem]"
+            className="max-w-[3rem]"
           />
           <RiMenu3Line className="text-white text-[2rem]" onClick={() => setSideMenu(!sideMenu)}/>
         </div>
-        <SideMenu navlinks={navLinks} toggle={sideMenu}/>
+        <SideMenu navlinks={navLinks} toggle={sideMenu} reference = {DrawerRef}/>
     </div> 
     </div> 
     </>

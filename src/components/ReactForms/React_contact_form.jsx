@@ -21,12 +21,10 @@ export default function React_contact_form() {
         const response = await axios.post('https://formspree.io/f/mgvzbaww', data)
         
         if(response.status == 200){
-          console.log(response.status)
           setStatus("Thank You for your Message! I'll get back to you shortly")
           reset()
         }
         else{
-          console.log(response.status)
           setStatus("Failed to Send Message")
         }
       }
