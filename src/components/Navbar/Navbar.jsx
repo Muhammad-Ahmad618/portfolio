@@ -16,6 +16,7 @@ export default function Navbar() {
    
   const [sideMenu, setSideMenu] = useState(false);
   const DrawerRef = useRef(null)
+  const MenuIconRef = useRef(null)
 
   useEffect(() => {
       
@@ -29,7 +30,7 @@ export default function Navbar() {
 
     const handleClickOutside = (event) => {
      
-      if(DrawerRef.current && !DrawerRef.current.contains(event.target)){
+      if(DrawerRef.current && !DrawerRef.current.contains(event.target) && MenuIconRef.current && !MenuIconRef.current.contains(event.target)){
        
        setSideMenu(false)  
        }
@@ -109,7 +110,7 @@ export default function Navbar() {
             alt="M-ahmad"
             className="max-w-[3rem]"
           />
-          <RiMenu3Line className="text-white text-[2rem]" onClick={() => setSideMenu(!sideMenu)}/>
+          <RiMenu3Line className="text-white text-[2rem]" onClick={() => setSideMenu(!sideMenu)} ref={MenuIconRef}/>
         </div>
         <SideMenu navlinks={navLinks} toggle={sideMenu} reference = {DrawerRef}/>
     </div> 

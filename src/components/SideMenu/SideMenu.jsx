@@ -3,8 +3,6 @@ import React from "react";
 
 function SideMenu({ navlinks, toggle, reference }) {
 
-  console.log(toggle)
-
   return (
     <div className={`flex md:hidden w-[70vw] min-h-screen ${toggle == true ? 'translate-x-0': '-translate-x-full'} transition-all duration-300 ease-in-out fixed bg-black/70 backdrop-blur-sm z-20 top-[4.2rem]`}
     ref={reference}
