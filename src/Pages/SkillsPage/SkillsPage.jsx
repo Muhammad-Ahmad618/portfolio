@@ -66,7 +66,7 @@ export default function SkillsPage() {
   return (
     <div className='w-full mx-auto max-w-screen-2xl px-5 md:px-20'>
       <div className='mt-20'>1
-       <h1 className='flex text-white gap-x-2 text-[2rem] md:text-[3rem] font-bold justify-center'>My
+       <h1 className='flex text-white gap-x-2 text-[2.5rem] md:text-[3rem] font-bold justify-center'>My
        <GradientText
        colors={["#ec4899","#c654ba","#a855f7", "#7c5ef5" ,"#6366f1",]}
        animationSpeed={3}

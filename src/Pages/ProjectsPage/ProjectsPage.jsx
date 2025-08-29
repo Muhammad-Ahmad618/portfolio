@@ -4,8 +4,8 @@ import {projects} from '../../components/ProjectData/ProjectData'
 
 export default function ProjectsPage() {
   return (
-    <div className="max-w-screen-2xl mx-auto my-20 px-5 sm:px-10 lg:px-20">
-      <div className="text-[3rem] font-bold flex justify-center">
+    <div className="max-w-screen-2xl mx-auto my-28 sm:my-20 px-5 sm:px-10 lg:px-20">
+      <div className="text-[2.5rem] sm:text-[3rem] font-bold flex justify-center">
         <GradientText
           colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
           animationSpeed={3}
@@ -15,7 +15,7 @@ export default function ProjectsPage() {
         </GradientText>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-cols-max my-20 gap-5 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-cols-max my-10 sm:my-20 gap-5 ">
         {projects.map((project, index) => (
           <div
             key={index}

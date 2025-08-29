@@ -37,22 +37,35 @@ export default function React_contact_form() {
     console.log(watch("example"))
 
   return (
-    <div className='border-2 border-purple-400 bg-gradient-to-r from-gray-950 to-gray-900 shadow-md shadow-purple-500/30 p-10 rounded-2xl'>
+    <div className='border-2 border-purple-400 bg-gradient-to-r from-gray-950 to-gray-900 shadow-md shadow-purple-500/30 p-5 sm:p-10 rounded-2xl'>
 
         <form 
        onSubmit={handleSubmit(onSubmit)}
        className='flex flex-col gap-y-10'>
            
+           <div>
            <input type='text' {...register("Name", {required:"Name is Required"})}
            placeholder='Name'
-           className='border-b-1 border-purple-600 text-white focus:outline-0 py-2'
+           className='border-b-1 border-purple-600 text-white focus:outline-0 py-2 w-full'
            name='Name'
            />
+           {errors.Name && (
+               <span className='text-red-500 text-sm'>{errors.Name.message}</span>
+           )
+           }
+           </div>
+
+           <div>
            <input type='email' {...register("Email", {required:"Email is Required"})}
            placeholder='Email'
-            className='border-b-1 border-purple-600 text-white focus:outline-0 py-2'
+            className='border-b-1 border-purple-600 text-white focus:outline-0 py-2 w-full'
             name='Email'
            />
+           {errors.Email && (
+            <span className='text-red-500 text-sm'>{errors.Email.message}</span>
+           )}
+           </div>
+
            <textarea name="message" {...register("Message", {required:"Message Box is Empty"})}
            cols="40"
            rows="5"

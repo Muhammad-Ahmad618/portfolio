@@ -4,32 +4,26 @@ import { IoCalendarClearOutline } from "react-icons/io5";
 
 export default function ExperincePage() {
 
-    const experience = [
-      {
-        role: "Wordpress Developer",
-        company:'JK Media Digital Marketing',
-        duration: 'Feb 2025 - Present',
-        description: [
-          "Designed intuitive and responsive UI layouts for the GearBox e-commerce platform using Figma",
-          "Developed front-end components in React JS with Tailwind CSS, enhancing cross-device compatibility"
-        ]
-      }
-      ,
-      {
-        role: "UI/UX Intern",
-        company:'NUEXUS Technologies',
-        duration: 'July 2024 - Sept 2024',
-        description: [
-          "Designed intuitive and responsive UI layouts for the GearBox e-commerce platform using Figma",
-          "Developed front-end components in React JS with Tailwind CSS, enhancing cross-device compatibility"
-        ]
-      }
-    ]
-
+  const experience = [
+  {
+    role: "Wordpress Developer",
+    company: "JK Media Digital Marketing",
+    duration: "Feb 2025 - Present",
+    description:
+      "Worked on client websites by creating and editing pages with Elementor and WordPress templates. Optimized layouts with CSS, uploaded and formatted content, and ensured cross-device consistency. Collaborated with QA and content teams to deliver polished, functional websites."
+  },
+  {
+    role: "UI/UX Intern",
+    company: "NUEXUS Technologies",
+    duration: "July 2024 - Sept 2024",
+    description:
+      "Designed wireframes and interactive prototypes in Figma, conducting user research and competitor analysis to guide design decisions. Created low- to mid-fidelity designs for web and mobile interfaces and documented usability considerations in detailed reports."
+  }
+]
   return (
-    <div className='my-28 md:my-20 max-w-screen-2xl mx-auto px-10 sm:px-20'>
+    <div className='my-28 md:my-20 max-w-screen-2xl mx-auto px-5 sm:px-20'>
       
-      <div className='text-[2.5rem] md:text-[3rem] font-bold flex justify-center'>
+      <div className='text-center text-[2.5rem] md:text-[3rem] font-bold flex justify-center'>
       <GradientText 
        colors={["#ec4899","#c654ba","#a855f7", "#7c5ef5" ,"#6366f1",]}
        animationSpeed={3}
@@ -55,12 +49,10 @@ export default function ExperincePage() {
 
           </div> 
           <div className='flex items-center gap-x-5'>
-          <div className='w-1 h-[7rem] min-[440px]:h-[5rem] bg-purple-700'>
+          <div className='w-2 h-[7rem] min-[440px]:h-[5rem] bg-purple-700'>
           </div>  
           <ul className='text-sm sm:text-[0.9rem] space-y-2'>
-          {exp.description.map((ach,index) => (
-            <li key={index}>{ach}</li>
-      ))}
+           {exp.description}
           </ul>
           </div>
         </div>
