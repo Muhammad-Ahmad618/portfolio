@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {Fade} from "react-awesome-reveal"
 import GradientText from "../../components/GradientText/GradientText";
@@ -7,6 +7,10 @@ import { Typewriter } from "react-simple-typewriter";
 import ProfileCode from "../../components/ProfileCode/ProfileCode";
 
 export default function LandingPage() {
+
+  const handleClick = () => {
+     window.open('https://github.com/Muhammad-Ahmad618', '_blank')
+  }
 
   return (
     <>
@@ -49,7 +53,7 @@ export default function LandingPage() {
           <div className="my-5 sm:my-10 flex flex-wrap w-full gap-y-5 min-[400px]:gap-x-5">
             
           <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-1 rounded-xl flex max-w-[9rem] w-full">
-            <button className="bg-[#161515] text-base font-medium rounded-lg w-full cursor-pointer py-2.5 hover:bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">
+            <button className="bg-[#161515] text-base font-medium rounded-lg w-full cursor-pointer py-2.5 hover:bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500" onClick={() => handleClick()}>
               Learn More
             </button>
           </div>

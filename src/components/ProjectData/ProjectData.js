@@ -92,10 +92,10 @@ export const projects = [
   },
   {
     image_path: "/iris_engine.webp",
-    title: "Iris Engine",
+    title: "Origin Video Game Store",
     type: "Vide Game Store",
     description:
-      "Iris Engine is a modern, responsive web application designed to serve as an online video game store. The project focuses on delivering an engaging user experience through sleek UI/UX design and dynamic content integration.",
+      "Origin is a modern, responsive web application designed to serve as an online video game store. The project focuses on delivering an engaging user experience through sleek UI/UX design and dynamic content integration.",
     url: "https://iris-engine.vercel.app/",
     tech_stack: [
       {
