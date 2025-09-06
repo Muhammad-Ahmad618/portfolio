@@ -61,8 +61,6 @@ export default function LandingPage() {
           <a href="/Muhammad Ahmad (Front End Developer).pdf" download className="flex items-center justify-center gap-x-2 border-2 border-gray-300 text-base font-medium px-5 rounded-xl hover:bg-[#252424] py-4 cursor-pointer duration-300 ease-in-out transition-all">
             Download Resume <IoMdDownload className="text-[1.2rem]"/>
           </a>
-          
-
           </div>
            
         </div>
