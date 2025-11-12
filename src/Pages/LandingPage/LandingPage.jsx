@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGithub } from "react-icons/fa"
 import { motion } from "framer-motion";
 import {Fade} from "react-awesome-reveal"
 import GradientText from "../../components/GradientText/GradientText";
@@ -52,9 +53,9 @@ export default function LandingPage() {
           
           <div className="my-5 sm:my-10 flex flex-wrap w-full gap-y-5 min-[400px]:gap-x-5">
             
-          <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-1 rounded-xl flex max-w-[9rem] w-full">
-            <button className="bg-[#161515] text-base font-medium rounded-lg w-full cursor-pointer py-2.5 hover:bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500" onClick={() => handleClick()}>
-              Learn More
+          <div className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 p-1 rounded-xl flex max-w-[10rem] w-full">
+            <button className="bg-[#161515] flex items-center justify-center gap-x-2 text-base font-medium rounded-lg w-full cursor-pointer py-2.5 hover:bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500" onClick={() => handleClick()}>
+              <FaGithub className="text-[1.4rem]"/> Learn More
             </button>
           </div>
 

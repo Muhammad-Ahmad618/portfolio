@@ -8,11 +8,14 @@ import { BiLogoRedux } from "react-icons/bi";
 import { SiGoogleforms } from "react-icons/si";
 import { BiSolidEnvelopeOpen } from "react-icons/bi";
 import { PiFigmaLogoDuotone } from "react-icons/pi";
+import { FaCode } from "react-icons/fa6";
 
 export const projects = [
   {
     image_path: "/stellar_academy.webp",
     title: "Stellar Academy",
+    category: "Web",
+    icon: FaCode,
     type: "Business Site",
     description:
       "Stellar Academy is a responsive, modern website built for an educational institution to streamline communication and student engagement. The platform focuses on clarity, accessibility, and ease of use, tailored for its users.",
@@ -53,6 +56,8 @@ export const projects = [
   {
     image_path: "/urovision.webp",
     title: "UroVision",
+    category: "Web",
+    icon: FaCode,
     type: "Health Care App",
     description:
       "UroVision is a healthcare-focused web application designed to assist doctors in managing kidney stone detection and patient treatment workflows. The project aims to streamline clinical operations with an intuitive, responsive interface.",
@@ -93,6 +98,8 @@ export const projects = [
   {
     image_path: "/iris_engine.webp",
     title: "Origin Video Game Store",
+    category: "Web",
+    icon: FaCode,
     type: "Vide Game Store",
     description:
       "Origin is a modern, responsive web application designed to serve as an online video game store. The project focuses on delivering an engaging user experience through sleek UI/UX design and dynamic content integration.",
@@ -128,6 +135,8 @@ export const projects = [
   {
     image_path: "/tech_nova.webp",
     title: "Tech Nova",
+    category: "Web",
+    icon: FaCode,
     type: "Business Site",
     description:
       "Tech Nova is a fully responsive business website developed for a software house to showcase its services, projects, and brand identity. The project emphasizes performance, modern design, and smooth user interaction.",
@@ -148,6 +157,8 @@ export const projects = [
   {
     image_path: "/Devsphere.webp",
     title: "DevSphere",
+    category: "Web",
+    icon: FaCode,
     type: "Business Site",
     description:
       "DevSphere is a sleek, responsive portfolio website designed for a software house to present its services, team, and project portfolio. The goal was to create a professional online presence with intuitive navigation and a clean, modern interface.",

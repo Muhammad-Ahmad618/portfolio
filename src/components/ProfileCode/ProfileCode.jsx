@@ -1,13 +1,12 @@
-import React, {useRef, useEffect, useState} from 'react'
-import Typed from 'typed.js'
+import React, { useRef, useEffect, useState } from "react";
+import Typed from "typed.js";
 
-let hasAnimated = false
+let hasAnimated = false;
 
 function ProfileCode() {
-       
-    const[done, setDone] = useState(hasAnimated)
-    const typedE1 = useRef(null)
-     const codeString = `const profile = {
+  const [done, setDone] = useState(hasAnimated);
+  const typedE1 = useRef(null);
+  const codeString = `const profile = {
   name: 'Muhammad Ahmad',
   title: 'Frontend Developer | Software Engineer',
   skills: [
@@ -25,37 +24,36 @@ function ProfileCode() {
       this.skills.length >= 5
     );
   }
-};`
+};`;
 
-    useEffect(() => {
-    if(!hasAnimated){
-   const typed = new Typed(typedE1.current, {
-     strings: [codeString],
-     typeSpeed:10,
-     showCursor:true,
-     cursorChar:'|',
-     onComplete: () => {
-      hasAnimated = true
-      setDone(true)
-     }
-   })
+  useEffect(() => {
+    if (!hasAnimated) {
+      const typed = new Typed(typedE1.current, {
+        strings: [codeString],
+        typeSpeed: 10,
+        showCursor: true,
+        cursorChar: "|",
+        onComplete: () => {
+          hasAnimated = true;
+          setDone(true);
+        },
+      });
 
-   return () => {
-    typed.destroy();
+      return () => {
+        typed.destroy();
+      };
     }
-   }
-    },[])
-
+  }, []);
 
   return (
-    <div className=' text-white font-mono text-sm'>
+    <div className=" text-white font-mono text-sm">
       {done ? (
-       <pre className='whitespace-pre-wrap'>{codeString}</pre> 
+        <pre className="whitespace-pre-wrap">{codeString}</pre>
       ) : (
-        <pre ref={typedE1} className='whitespace-pre-wrap' />
-        )}
+        <pre ref={typedE1} className="whitespace-pre-wrap" />
+      )}
     </div>
-  )
+  );
 }
 
-export default ProfileCode
+export default ProfileCode;

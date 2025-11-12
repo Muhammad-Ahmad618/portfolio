@@ -8,7 +8,7 @@ export default function ExperincePage() {
   {
     role: "Wordpress Developer",
     company: "JK Media Digital Marketing",
-    duration: "Feb 2025 - Present",
+    duration: "Feb 2025 - Sept 2025",
     description:
       "Worked on client websites by creating and editing pages with Elementor and WordPress templates. Optimized layouts with CSS, uploaded and formatted content, and ensured cross-device consistency. Collaborated with QA and content teams to deliver polished, functional websites."
   },
