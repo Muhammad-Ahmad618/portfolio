@@ -15,7 +15,7 @@ export default function LandingPage() {
 
   return (
     <>
-    <div className="my-28 md:my-20 max-w-screen-2xl mx-auto">
+    <div className="my-28 md:my-20 max-w-screen-2xl mx-auto px-14">
       <div className="px-5 sm:px-10 font-primary flex items-start lg:items-center flex-col lg:flex-row gap-y-10 md:gap-x-20 ">
         <div className="text-white font-bold text-[3rem] w-full basis-[100%] lg:basis-[45%]" >
           <motion.h1
@@ -25,7 +25,6 @@ export default function LandingPage() {
           >
             Hello!
           </motion.h1>
-
           <span className="flex gap-x-3 flex-wrap ">
             <h1>I'm </h1>
             <GradientText

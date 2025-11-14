@@ -1,16 +1,9 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import GradientText from "../../components/GradientText/GradientText";
 
 export default function SkillsPage() {
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeInOut" },
-    },
-  };
+
 
   const technologies = [
     {
@@ -99,7 +92,7 @@ export default function SkillsPage() {
     <div className="w-full mx-auto max-w-screen-2xl px-5 md:px-20">
       <div className="mt-20">
         1
-        <h1 className="flex text-white gap-x-2 text-[2.5rem] md:text-[3rem] font-bold justify-center">
+        <h1 className="flex text-white gap-x-2 text-[2.5rem] md:text-[3rem] font-black justify-center">
           <GradientText
             colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
             animationSpeed={3}
@@ -113,11 +106,11 @@ export default function SkillsPage() {
           {technologies.map((tech, index) => (
             <motion.div
               key={index}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
+              initial={{opacity:0, y:50 }}
+              whileInView={{opacity:1, y:0}}
+              tranistion={{duration:0.5, ease:"easeInOut" ,delay: index * 0.2}}
               viewport={{ once: true, amount: 0.2 }}
-              className="flex flex-col items-center space-y-5 bg-gradient-to-r from-gray-950 via-gray-800 to-gray-950 p-10 w-full rounded-xl transition-all duration-300 ease-in-out hover:scale-105"
+              className="flex flex-col items-center space-y-5 bg-white/5 backdrop-blur-md p-10 w-full rounded-xl transition-all duration-300 ease-in-out hover:scale-105"
             >
               <img
                 src={tech.image}

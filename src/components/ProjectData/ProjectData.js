@@ -7,6 +7,7 @@ import { SiVite } from "react-icons/si";
 import { BiLogoRedux } from "react-icons/bi";
 import { SiGoogleforms } from "react-icons/si";
 import { BiSolidEnvelopeOpen } from "react-icons/bi";
+import { SiReactquery } from "react-icons/si"
 import { PiFigmaLogoDuotone } from "react-icons/pi";
 import { FaCode } from "react-icons/fa6";
 
@@ -126,7 +127,12 @@ export const projects = [
         color: "text-blue-500",
       },
       {
-        name: "Figma",
+        name: "TanStack Query",
+        icon: SiReactquery,
+        color: "text-red-500",
+      },
+      {
+        name: "Figma" ,
         icon: PiFigmaLogoDuotone,
         color: "text-pink-800",
       },

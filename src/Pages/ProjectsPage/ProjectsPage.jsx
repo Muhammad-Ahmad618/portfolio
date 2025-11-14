@@ -7,7 +7,7 @@ import { IoLogoFigma } from "react-icons/io5";
 export default function ProjectsPage() {
   return (
     <div className="max-w-screen-2xl mx-auto my-28 sm:my-20 px-5 sm:px-10 lg:px-20">
-      <div className="text-[2.5rem] sm:text-[3rem] font-bold flex justify-center">
+      <div className="text-[2.5rem] sm:text-[3rem] font-black flex justify-center">
         <GradientText
           colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
           animationSpeed={3}
@@ -39,7 +39,7 @@ export default function ProjectsPage() {
           return (
           <div
             key={index}
-            className="bg-gradient-to-r from-gray-950 to-gray-900 rounded-xl min-h-fit w-full"
+            className="bg-gradient-to-r from-gray-950 via-gray-800 to-gray-950 backdrop-blur-md rounded-xl min-h-fit w-full"
           >
             <div className="p-2">
               <img
