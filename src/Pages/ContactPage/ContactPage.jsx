@@ -19,7 +19,7 @@ const contactInfo = [
 
 export default function ContactPage() {
   return (
-    <div className="max-w-screen-2xl mx-auto px-5 md:px-20 my-28 md:my-20">
+    <div className="max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20 my-28 md:my-20">
       <div className="text-[2.5rem] md:text-[3rem] font-black flex justify-center">
         <GradientText
           colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}

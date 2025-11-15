@@ -1,95 +1,111 @@
 import React from "react";
-import { delay, motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import GradientText from "../../components/GradientText/GradientText";
 
 export default function SkillsPage() {
 
 
   const technologies = [
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
-      name: "HTML",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
-      name: "CSS",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
-      name: "JavaScript",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
-      name: "tailwind CSS",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
-      name: "BootStrap",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
-      name: "React Js",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/axios/axios-plain.svg",
-      name: "Axios",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
-      name: "postman",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
-      name: "Git",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-      name: "Python",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
-      name: "Numpy",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
-      name: "Pandas",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
-      name: "Figma",
-    },
-    {
-      image:
-        "https://res.cloudinary.com/ddskcinwi/image/upload/v1762964646/wordpress_logo_majppz.png",
-      name: "WordPress",
-    },
-    {
-      image:
-        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg",
-      name: "Zustand",
-    },
-    {
-      image:
-        "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/react-query-icon-xjukes5xosrrwg3y3ics1f.png/react-query-icon-2dw36yx2b016w37mbipyn.png?_a=DATAg1AAZAA0",
-      name: "React Query",
-    },
-  ];
+  {
+    id: 1,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+    name: "HTML",
+  },
+  {
+    id: 2,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+    name: "CSS",
+  },
+  {
+    id: 3,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    name: "JavaScript",
+  },
+  {
+    id: 4,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+    name: "tailwind CSS",
+  },
+  {
+    id: 5,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg",
+    name: "BootStrap",
+  },
+  {
+    id: 6,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    name: "React Js",
+  },
+  {
+    id: 7,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/axios/axios-plain.svg",
+    name: "Axios",
+  },
+  {
+    id: 8,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg",
+    name: "postman",
+  },
+  {
+    id: 9,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    name: "Git",
+  },
+  {
+    id: 10,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
+    name: "Python",
+  },
+  {
+    id: 11,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg",
+    name: "Numpy",
+  },
+  {
+    id: 12,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg",
+    name: "Pandas",
+  },
+  {
+    id: 13,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg",
+    name: "Figma",
+  },
+  {
+    id: 14,
+    image:
+      "https://res.cloudinary.com/ddskcinwi/image/upload/v1762964646/wordpress_logo_majppz.png",
+    name: "WordPress",
+  },
+  {
+    id: 15,
+    image:
+      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/zustand/zustand-original.svg",
+    name: "Zustand",
+  },
+  {
+    id: 16,
+    image:
+      "https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/2/react-query-icon-xjukes5xosrrwg3y3ics1f.png/react-query-icon-2dw36yx2b016w37mbipyn.png?_a=DATAg1AAZAA0",
+    name: "React Query",
+  },
+];
 
   return (
-    <div className="w-full mx-auto max-w-screen-2xl px-5 md:px-20">
+    <div className="w-full mx-auto max-w-screen-2xl px-5 sm:px-14 lg:px-20">
       <div className="mt-20">
         1
         <h1 className="flex text-white gap-x-2 text-[2.5rem] md:text-[3rem] font-black justify-center">
@@ -102,13 +118,13 @@ export default function SkillsPage() {
           </GradientText>
           Stack
         </h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto justify-items-center my-20 gap-5 lg:gap-10 max-w-screen-xl mx-auto">
-          {technologies.map((tech, index) => (
-            <motion.div
-              key={index}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto justify-items-center my-20 gap-5 lg:gap-10 mx-auto">
+          {technologies.map((tech) => (
+            <Motion.div
+              key={tech.id}
               initial={{opacity:0, y:50 }}
               whileInView={{opacity:1, y:0}}
-              tranistion={{duration:0.5, ease:"easeInOut" ,delay: index * 0.2}}
+              tranistion={{duration:0.5, ease:"easeInOut"}}
               viewport={{ once: true, amount: 0.2 }}
               className="flex flex-col items-center space-y-5 bg-white/5 backdrop-blur-md p-10 w-full rounded-xl transition-all duration-300 ease-in-out hover:scale-105"
             >
@@ -120,7 +136,7 @@ export default function SkillsPage() {
               <h4 className="text-white font-semibold text-[1.2rem]">
                 {tech.name}
               </h4>
-            </motion.div>
+            </Motion.div>
           ))}
         </div>
       </div>
