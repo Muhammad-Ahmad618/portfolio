@@ -1,5 +1,4 @@
 import React from "react";
-import { motion as Motion } from "framer-motion";
 import GradientText from "../../components/GradientText/GradientText";
 
 export default function SkillsPage() {
@@ -120,12 +119,7 @@ export default function SkillsPage() {
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto justify-items-center my-20 gap-5 lg:gap-10 mx-auto">
           {technologies.map((tech) => (
-            <Motion.div
-              key={tech.id}
-              initial={{opacity:0, y:50 }}
-              whileInView={{opacity:1, y:0}}
-              tranistion={{duration:0.5, ease:"easeInOut"}}
-              viewport={{ once: true, amount: 0.2 }}
+            <div
               className="flex flex-col items-center space-y-5 bg-white/5 backdrop-blur-md p-10 w-full rounded-xl transition-all duration-300 ease-in-out hover:scale-105"
             >
               <img
@@ -136,7 +130,7 @@ export default function SkillsPage() {
               <h4 className="text-white font-semibold text-[1.2rem]">
                 {tech.name}
               </h4>
-            </Motion.div>
+            </div>
           ))}
         </div>
       </div>

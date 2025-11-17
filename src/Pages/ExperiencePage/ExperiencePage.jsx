@@ -3,7 +3,6 @@ import GradientText from "../../components/GradientText/GradientText";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { MdWeb } from "react-icons/md";
 import { BsBrushFill } from "react-icons/bs";
-import { motion as Motion} from "framer-motion";
 
 export default function ExperincePage() {
 
@@ -56,12 +55,12 @@ export default function ExperincePage() {
         <div className="hidden lg:block w-1 h-full absolute bg-gradient-to-b from-purple-500 via-indigo-700 to-transparent right-1/2"></div>
         <div className="grid lg:grid-cols-2 gap-x-10 2xl:gap-x-24 gap-y-20 my-24 2xl:justify-self-center">
           {experience.map((exp, index) => (
-            <Motion.div
+            <div
               key={exp.id}
               initial={{ opacity: 0, y: 50 }}
-              animate={{  opacity: 1, y: 0  }}
+              whileInView={{  opacity: 1, y: 0  }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: "easeInOut" }}
+              transition={{ duration: 0.8, ease: "easeInOut"}}
               className={`w-full mx-auto ${
                 index % 2 == 0
                   ? "lg:col-start-1 lg:justify-self-start"
@@ -99,7 +98,7 @@ export default function ExperincePage() {
                   ))}
                 </ul>
               </div>
-            </Motion.div>
+            </div>
           ))}
         </div>
       </div>
