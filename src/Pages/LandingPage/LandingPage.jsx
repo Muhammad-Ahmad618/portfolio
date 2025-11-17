@@ -1,6 +1,5 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa"
-import { motion } from "framer-motion";
 import {Fade} from "react-awesome-reveal"
 import GradientText from "../../components/GradientText/GradientText";
 import { IoMdDownload } from "react-icons/io"
