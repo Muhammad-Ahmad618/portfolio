@@ -1,41 +1,9 @@
 import React from "react";
 import GradientText from "../../components/GradientText/GradientText";
 import { IoCalendarClearOutline } from "react-icons/io5";
-import { MdWeb } from "react-icons/md";
-import { BsBrushFill } from "react-icons/bs";
+import { experience } from "./data";
 
 export default function ExperincePage() {
-
-  const experience = [
-    {
-      id: "01",
-      role: "WordPress Developer",
-      icon: <MdWeb size={28} />,
-      company: "JK Media Digital Marketing",
-      duration: "Feb 2025 - Sept 2025",
-      description: [
-        "Built and customized webpages using Elementor and WordPress.",
-        "Styled layouts with custom CSS to match branding.",
-        "Managed content uploads for blogs and product pages.",
-        "Installed plugins and prepared sites for launch.",
-        "Ensured responsive, visually polished websites.",
-      ],
-    },
-    {
-      id: "02",
-      role: "UI/UX Intern",
-      icon: <BsBrushFill size={25} />,
-      company: "NUEXUS Technologies",
-      duration: "July 2024 - Sept 2024",
-      description: [
-        "Created wireframes and interactive prototypes in Figma.",
-        "Conducted user research and competitor analysis.",
-        "Designed low- to mid-fidelity web and mobile interfaces.",
-        "Documented design decisions and usability insights.",
-      ],
-    },
-  ];
-
   return (
     <div className="my-28 md:my-20 max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20">
       <div className="text-center text-[2.5rem] md:text-[3rem] font-black flex flex-col items-center justify-center">
@@ -58,9 +26,9 @@ export default function ExperincePage() {
             <div
               key={exp.id}
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{  opacity: 1, y: 0  }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
-              transition={{ duration: 0.8, ease: "easeInOut"}}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               className={`w-full mx-auto ${
                 index % 2 == 0
                   ? "lg:col-start-1 lg:justify-self-start"

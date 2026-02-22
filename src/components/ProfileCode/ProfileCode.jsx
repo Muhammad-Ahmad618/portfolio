@@ -10,9 +10,9 @@ function ProfileCode() {
   name: 'Muhammad Ahmad',
   title: 'Frontend Developer | Software Engineer',
   skills: [
-    'React.js', 'JavaScript', 'Tailwind CSS', 'HTML5', 'CSS3',
-    'Bootstrap', 'Responsive Design', 'API Integration',
-    'Context API', 'Git', 'UI/UX', 'Figma', 'Python', 'C++'
+    'Next.js', 'React.js', 'TypeScript', 'JavaScript', 'Tailwind CSS',
+    'HTML5', 'CSS3', 'Bootstrap', 'Responsive Design', 'API Integration',
+    'Context API', 'Zustand', 'Git', 'UI/UX', 'Figma', 'Python',
   ],
   hardWorker: true,
   quickLearner: true,
@@ -46,7 +46,7 @@ function ProfileCode() {
   }, []);
 
   return (
-    <div className=" text-white font-mono text-sm">
+    <div className=" text-white font-mono text-sm h-[56vh] ">
       {done ? (
         <pre className="whitespace-pre-wrap">{codeString}</pre>
       ) : (

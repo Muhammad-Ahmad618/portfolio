@@ -1,6 +1,6 @@
 import React from "react";
 import GradientText from "../../components/GradientText/GradientText";
-import { projects } from "../../components/ProjectData/ProjectData";
+import { projects } from "./ProjectData";
 import { FaCode } from "react-icons/fa6";
 import { IoLogoFigma } from "react-icons/io5";
 
@@ -33,57 +33,57 @@ export default function ProjectsPage() {
         </ul>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-cols-max  gap-5 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-cols-max gap-5 ">
         {projects.map((project, index) => {
           const CatIcon = project.icon;
           return (
-          <div
-            key={index}
-            className="bg-gradient-to-r from-gray-950 via-gray-800 to-gray-950 backdrop-blur-md rounded-xl min-h-fit w-full"
-          >
-            <div className="p-2">
-              <img
-                src={project.image_path}
-                alt={project.title}
-                className="rounded-xl w-full h-full object-cover"
-              />
-            </div>
-            <div className="min-h-fit w-full rounded-b-xl p-5">
-              <div className=" space-y-3 h-full rounded-b-xl">
-                <div className="flex item-center justify-between">
-                  <h2 className="text-white text-[1.5rem] font-bold">
-                    {project.title}
-                  </h2>
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-md rounded-xl min-h-fit w-full shadow-purple-400 hover:shadow-[0_0_30px_rgba(0,0,0,0.4)] transition-all duration-300 ease-in-out cursor-pointer"
+            >
+              <div className="p-2">
+                <img
+                  src={project.image_path}
+                  alt={project.title}
+                  className="rounded-xl w-full h-full object-cover"
+                />
+              </div>
+              <div className="min-h-fit w-full rounded-b-xl p-5">
+                <div className=" space-y-3 h-full rounded-b-xl">
+                  <div className="flex item-center justify-between">
+                    <h2 className="text-white text-[1.5rem] font-bold">
+                      {project.title}
+                    </h2>
 
-                  <p className="text-xs font-medium flex rounded-full px-3 bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
-                    <CatIcon className="text-sm" />
-                    {project.category}
+                    <p className="text-xs font-medium flex rounded-full px-3 bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
+                      <CatIcon className="text-sm" />
+                      {project.category}
+                    </p>
+                  </div>
+                  <p className="text-gray-200 text-sm leading-5 line-clamp-4 sm:line-clamp-5">
+                    {project.description}
                   </p>
-                  
-                </div>
-                <p className="text-gray-400 text-sm font-medium line-clamp-4 sm:line-clamp-5">
-                  {project.description}
-                </p>
-                <div className="flex gap-2 my-4 w-full flex-wrap">
-                  {project.tech_stack.map((tech, idx) => {
-                    const Icon = tech.icon;
-                    return (
-                      <div
-                        key={idx}
-                        className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
-                      >
-                        <Icon className={`text-xl ${tech.color}`}></Icon>
-                        <h4 className="text-xs font-bold text-white">
-                          {tech.name}
-                        </h4>
-                      </div>
-                    );
-                  })}
+                  <div className="flex gap-2 my-4 w-full flex-wrap">
+                    {project.tech_stack.map((tech, idx) => {
+                      const Icon = tech.icon;
+                      return (
+                        <div
+                          key={idx}
+                          className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
+                        >
+                          <Icon className={`text-xl ${tech.color}`}></Icon>
+                          <h4 className="text-xs font-bold text-white">
+                            {tech.name}
+                          </h4>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        )})}
+          );
+        })}
       </div>
     </div>
   );

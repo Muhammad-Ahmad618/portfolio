@@ -7,7 +7,7 @@ import { SiVite } from "react-icons/si";
 import { BiLogoRedux } from "react-icons/bi";
 import { SiGoogleforms } from "react-icons/si";
 import { BiSolidEnvelopeOpen } from "react-icons/bi";
-import { SiReactquery } from "react-icons/si"
+import { SiReactquery } from "react-icons/si";
 import { PiFigmaLogoDuotone } from "react-icons/pi";
 import { FaCode } from "react-icons/fa6";
 
@@ -98,7 +98,7 @@ export const projects = [
   },
   {
     image_path: "/iris_engine.webp",
-    title: "Origin Video Game Store",
+    title: "Origin Store",
     category: "Web",
     icon: FaCode,
     type: "Vide Game Store",
@@ -132,7 +132,7 @@ export const projects = [
         color: "text-red-500",
       },
       {
-        name: "Figma" ,
+        name: "Figma",
         icon: PiFigmaLogoDuotone,
         color: "text-pink-800",
       },
