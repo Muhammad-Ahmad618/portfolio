@@ -1,6 +1,7 @@
 import React from "react";
 import GradientText from "../../components/GradientText/GradientText";
 import { projects } from "./ProjectData";
+import { motion } from "framer-motion";
 import { FaCode } from "react-icons/fa6";
 import { IoLogoFigma } from "react-icons/io5";
 
@@ -8,13 +9,19 @@ export default function ProjectsPage() {
   return (
     <div className="max-w-screen-2xl mx-auto my-28 sm:my-20 px-5 sm:px-14 lg:px-20">
       <div className="text-[2.5rem] sm:text-[3rem] font-black flex justify-center">
-        <GradientText
-          colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
-          animationSpeed={3}
-          showBorder={false}
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          My Projects
-        </GradientText>
+          <GradientText
+            colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
+            animationSpeed={3}
+            showBorder={false}
+          >
+            My Projects
+          </GradientText>
+        </motion.h1>
       </div>
 
       <div>

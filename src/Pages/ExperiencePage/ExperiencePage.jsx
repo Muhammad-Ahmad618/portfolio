@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import GradientText from "../../components/GradientText/GradientText";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { experience } from "./data";
@@ -7,27 +8,39 @@ export default function ExperincePage() {
   return (
     <div className="my-28 md:my-20 max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20">
       <div className="text-center text-[2.5rem] md:text-[3rem] font-black flex flex-col items-center justify-center">
-        <GradientText
-          colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
-          animationSpeed={3}
-          showBorder={false}
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Professional Journey
-        </GradientText>
-        <p className="mt-4 text-lg text-white mx-auto font-medium">
+          <GradientText
+            colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
+            animationSpeed={3}
+            showBorder={false}
+          >
+            Professional Journey
+          </GradientText>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="mt-4 text-lg text-white mx-auto font-medium"
+        >
           From building pixel-perfect websites to designing intuitive user
           experiences
-        </p>
+        </motion.p>
       </div>
       <div className="relative">
         <div className="hidden lg:block w-1 h-full absolute bg-gradient-to-b from-purple-500 via-indigo-700 to-transparent right-1/2"></div>
         <div className="grid lg:grid-cols-2 gap-x-10 2xl:gap-x-24 gap-y-20 my-24 2xl:justify-self-center">
           {experience.map((exp, index) => (
-            <div
+            <motion.div
               key={exp.id}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, ease: "easeInOut" }}
               className={`w-full mx-auto ${
                 index % 2 == 0
@@ -66,7 +79,7 @@ export default function ExperincePage() {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

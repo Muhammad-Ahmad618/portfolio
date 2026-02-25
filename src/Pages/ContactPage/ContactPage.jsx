@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import GradientText from "../../components/GradientText/GradientText";
 import ContactForm from "../../components/ReactForms/React_contact_form";
 import { IoMail } from "react-icons/io5";
@@ -19,15 +20,21 @@ const contactInfo = [
 
 export default function ContactPage() {
   return (
-    <div className="max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20 my-28 md:my-20">
+    <div className="max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20 my-10 flex flex-col justify-center min-h-screen">
       <div className="text-[2.5rem] md:text-[3rem] font-black flex justify-center">
-        <GradientText
-          colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
-          animationSpeed={3}
-          showBorder={false}
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Get in Touch
-        </GradientText>
+          <GradientText
+            colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
+            animationSpeed={3}
+            showBorder={false}
+          >
+            Get in Touch
+          </GradientText>
+        </motion.h1>
       </div>
 
       <div className="flex justify-between flex-wrap items-start gap-y-10 md:gap-x-16 mt-5 md:mt-20">

@@ -46,7 +46,7 @@ function ProfileCode() {
   }, []);
 
   return (
-    <div className=" text-white font-mono text-sm h-[56vh] ">
+    <div className=" text-white font-mono text-sm min-h-[26rem] ">
       {done ? (
         <pre className="whitespace-pre-wrap">{codeString}</pre>
       ) : (

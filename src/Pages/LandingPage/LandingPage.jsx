@@ -14,7 +14,7 @@ export default function LandingPage() {
   return (
     <>
       <div className="max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-24">
-        <div className="py-28 sm:py-0 font-primary flex items-start lg:items-center flex-col lg:flex-row gap-y-10 lg:gap-x-20 min-h-[calc(100vh-17vh)]">
+        <div className="py-28 sm:py-0 font-primary flex items-start lg:items-center flex-col lg:flex-row gap-y-10 lg:gap-x-20 min-h-screen">
           <div className="text-white font-bold text-[2.5rem] sm:text-[3rem] w-full basis-[100%] lg:basis-[45%]">
             <h1
               initial={{ opacity: 0 }}
@@ -75,7 +75,7 @@ export default function LandingPage() {
           </div>
           {/* Auto type code */}
           <div className="basis-[100%] lg:basis-[45%] w-full ">
-            <div className="bg-gradient-to-r from-gray-950 to-gray-900 p-5 rounded-t-xl flex gap-x-5 items-center">
+            <div className="bg-gradient-to-r from-gray-950 via-gray-800 to-gray-900 p-5 rounded-t-xl flex gap-x-5 items-center">
               <ul className="flex gap-x-3">
                 <li className="p-1.5 rounded-[100%] bg-red-600"></li>
                 <li className="p-1.5 rounded-[100%] bg-yellow-600"></li>
