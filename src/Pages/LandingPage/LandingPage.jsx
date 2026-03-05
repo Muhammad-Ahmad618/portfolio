@@ -14,7 +14,7 @@ export default function LandingPage() {
   return (
     <>
       <div className="max-w-screen-2xl  mx-auto px-5 sm:px-14 lg:px-24">
-        <div className="py-28 sm:py-0 font-primary flex items-center justify-center gap-y-10 lg:gap-x-20 h-[82vh]">
+        <div className="py-28  sm:py-0 font-primary flex flex-wrap items-center justify-center gap-y-10 lg:gap-x-20 min-h-[calc(100vh-120px)]">
           <div className="text-white font-bold text-[2.5rem] sm:text-[3rem] w-full basis-[100%] lg:basis-[45%]">
             <h1
               initial={{ opacity: 0 }}

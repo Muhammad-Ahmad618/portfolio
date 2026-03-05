@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function SkillsPage() {
   return (
     <div className="w-full mx-auto max-w-screen-2xl px-5 sm:px-14 lg:px-20">
-      <div className="mt-20">
+      <div className="my-20 md:mt-5">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
