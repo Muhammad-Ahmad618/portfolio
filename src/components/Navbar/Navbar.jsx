@@ -73,7 +73,7 @@ export default function Navbar() {
     <>
       <div className="hidden px-5 md:block py-0 md:py-7">
         <Fade direction="down" duration={1000} delay={200} triggerOnce>
-          <div className="border-0 max-w-[50rem] font-primary md:mx-auto  p-[2px] md:rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-lg ">
+          <div className="border-0 max-w-[50rem] font-primary md:mx-auto p-[2px] md:rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 shadow-lg ">
             <div className="bg-[#161515] py-2 md:rounded-full">
               <ul className=" text-white flex justify-between px-2 gap-2">
                 {navLinks.map((link, index) => (
@@ -82,10 +82,10 @@ export default function Navbar() {
                     key={index}
                     className={({
                       isActive,
-                    }) => `flex items-center  gap-x-2 justify-center rounded-full py-3  w-full cursor-pointer ${
+                    }) => `flex items-center gap-x-2 justify-center max-w-[8rem] w-full rounded-full py-3 cursor-pointer ${
                       isActive ? "bg-[#353434]" : ""
                     } hover:bg-[#353434] text-sm
-               font-medium transition-all duration-300 ease-in flex-1`}
+               font-medium transition-all duration-300 ease-in `}
                   >
                     <span className="text-[1rem]">{link.icon}</span>
                     {link.label}

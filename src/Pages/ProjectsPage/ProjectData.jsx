@@ -9,9 +9,10 @@ import { SiGoogleforms } from "react-icons/si";
 import { BiSolidEnvelopeOpen } from "react-icons/bi";
 import { SiReactquery } from "react-icons/si";
 import { PiFigmaLogoDuotone } from "react-icons/pi";
+import { BsBrushFill } from "react-icons/bs";
 import { FaCode } from "react-icons/fa6";
 
-export const projects = [
+export const webProjects = [
   {
     image_path: "/stellar_academy.webp",
     title: "Stellar Academy",
@@ -97,7 +98,7 @@ export const projects = [
     ],
   },
   {
-    image_path: "/iris_engine.webp",
+    image_path: "/Origin.webp",
     title: "Origin Store",
     category: "Web",
     icon: FaCode,
@@ -179,6 +180,26 @@ export const projects = [
         name: "Tailwind CSS",
         icon: RiTailwindCssFill,
         color: "text-blue-500",
+      },
+    ],
+  },
+];
+
+export const figmaProjects = [
+  {
+    thumbnail: "/UI/Gear Box.webp",
+    title: "Gear Box",
+    category: "UI / UX",
+    icon: BsBrushFill,
+    type: "E-commerce Store",
+    description:
+      "Gear Box is a modern, responsive e-commerce website built for a fashion retailer to showcase its products and engage customers. The project emphasizes user experience, intuitive navigation, and a visually appealing interface.",
+    url: "",
+    tool: [
+      {
+        label: "Figma",
+        icon: PiFigmaLogoDuotone,
+        color: "text-pink-800",
       },
     ],
   },

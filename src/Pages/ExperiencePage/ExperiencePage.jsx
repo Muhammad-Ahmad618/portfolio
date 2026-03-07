@@ -6,7 +6,7 @@ import { experience } from "./data";
 
 export default function ExperincePage() {
   return (
-    <div className=" max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20 my-20 md:mt-5">
+    <div className=" max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20 my-20 md:mt-10">
       <div className="text-center text-[2.5rem] md:text-[3rem] font-black flex flex-col items-center justify-center">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function SkillsPage() {
   return (
     <div className="w-full mx-auto max-w-screen-2xl px-5 sm:px-14 lg:px-20">
-      <div className="my-20 md:mt-5">
+      <div className="my-20 md:mt-10">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -24,7 +24,7 @@ export default function SkillsPage() {
           Stack
         </motion.h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto justify-items-center my-20 gap-5 lg:gap-10 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 row-auto justify-items-center my-14 gap-5 lg:gap-10 mx-auto">
           {technologies.map((tech, index) => (
             <motion.div
               key={tech.name}

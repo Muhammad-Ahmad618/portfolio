@@ -1,15 +1,40 @@
 import React, { useState } from "react";
 import GradientText from "../../components/GradientText/GradientText";
-import { projects } from "./ProjectData";
-import { motion } from "framer-motion";
+import { webProjects, figmaProjects } from "./ProjectData";
+import { motion, AnimatePresence } from "framer-motion";
 import { FaCode } from "react-icons/fa6";
 import { IoLogoFigma } from "react-icons/io5";
 
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState("tab1");
 
+  const containerVarient = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.12,
+        delayChildren: 0.1,
+      },
+    },
+  };
+
+  const cardVarient = {
+    hidden: {
+      opacity: 0,
+      y: 10,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+        ease: "easeIn",
+      },
+    },
+  };
+
   return (
-    <div className="max-w-screen-2xl mx-auto md:pb-20 px-5 sm:px-14 lg:px-20 min-h-screen my-20 md:my-5 ">
+    <div className="max-w-screen-2xl mx-auto md:pb-20 px-5 sm:px-14 lg:px-20 min-h-screen my-20 md:my-10 ">
       <div className="text-[2.5rem] sm:text-[3rem] font-black flex justify-center">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
@@ -49,110 +74,173 @@ export default function ProjectsPage() {
         </button>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-cols-max gap-5 ">
-        {activeTab === "tab1" &&
-          projects?.map((project, index) => {
-            const CatIcon = project.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-md rounded-xl min-h-fit w-full  cursor-pointer"
-              >
-                <div className="p-2">
-                  <img
-                    src={project.image_path}
-                    alt={project.title}
-                    className="rounded-xl w-full h-full object-cover"
-                  />
-                </div>
-                <div className="min-h-fit w-full rounded-b-xl p-5">
-                  <div className=" space-y-3 h-full rounded-b-xl">
-                    <div className="flex item-center justify-between">
-                      <h2 className="text-white text-[1.5rem] font-bold">
-                        {project.title}
-                      </h2>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeTab}
+          variants={containerVarient}
+          initial="hidden"
+          animate="visible"
+          exit="hidden"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-cols-max gap-5 "
+        >
+          {activeTab === "tab1" &&
+            webProjects?.map((project, index) => {
+              const CatIcon = project.icon;
+              return (
+                <motion.div
+                  key={index}
+                  variants={cardVarient}
+                  className="bg-white/10 backdrop-blur-md rounded-xl min-h-fit w-full  cursor-pointer"
+                >
+                  <div className="p-2">
+                    <img
+                      src={project.image_path}
+                      alt={project.title}
+                      className="rounded-xl w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="min-h-fit w-full rounded-b-xl p-5">
+                    <div className=" space-y-3 h-full rounded-b-xl">
+                      <div className="flex item-center justify-between">
+                        <h2 className="text-white text-[1.5rem] font-bold">
+                          {project.title}
+                        </h2>
 
-                      <p className="text-xs font-medium flex rounded-full px-3 bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
-                        <CatIcon className="text-sm" />
-                        {project.category}
+                        <p className="text-xs font-medium px-3 flex rounded-full bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
+                          <CatIcon className="text-xs" />
+                          {project.category}
+                        </p>
+                      </div>
+                      <p className="text-gray-200 text-sm leading-5 line-clamp-4 sm:line-clamp-5">
+                        {project.description}
                       </p>
-                    </div>
-                    <p className="text-gray-200 text-sm leading-5 line-clamp-4 sm:line-clamp-5">
-                      {project.description}
-                    </p>
-                    <div className="flex gap-2 my-4 w-full flex-wrap">
-                      {project.tech_stack.map((tech, idx) => {
-                        const Icon = tech.icon;
-                        return (
-                          <div
-                            key={idx}
-                            className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
-                          >
-                            <Icon className={`text-xl ${tech.color}`}></Icon>
-                            <h4 className="text-xs font-bold text-white">
-                              {tech.name}
-                            </h4>
-                          </div>
-                        );
-                      })}
+                      <div className="flex gap-2 my-4 w-full flex-wrap">
+                        {project.tech_stack.map((tech, idx) => {
+                          const Icon = tech.icon;
+                          return (
+                            <div
+                              key={idx}
+                              className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
+                            >
+                              <Icon className={`text-xl ${tech.color}`}></Icon>
+                              <h4 className="text-xs font-bold text-white">
+                                {tech.name}
+                              </h4>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
-        {activeTab === "tab2" &&
-          projects?.map((project, index) => {
-            const CatIcon = project.icon;
-            return (
-              <div
-                key={index}
-                className="bg-white/10 backdrop-blur-md rounded-xl min-h-fit w-full  cursor-pointer"
-              >
-                <div className="p-2">
-                  <img
-                    src={project.image_path}
-                    alt={project.title}
-                    className="rounded-xl w-full h-full object-cover"
-                  />
-                </div>
-                <div className="min-h-fit w-full rounded-b-xl p-5">
-                  <div className=" space-y-3 h-full rounded-b-xl">
-                    <div className="flex item-center justify-between">
-                      <h2 className="text-white text-[1.5rem] font-bold">
-                        {project.title}
-                      </h2>
+                </motion.div>
+              );
+            })}
+          {activeTab === "tab2" &&
+            webProjects?.map((project, index) => {
+              const CatIcon = project.icon;
+              return (
+                <motion.div
+                  key={index}
+                  variants={cardVarient}
+                  className="bg-white/10 backdrop-blur-md rounded-xl min-h-fit w-full  cursor-pointer"
+                >
+                  <div className="p-2">
+                    <img
+                      src={project.image_path}
+                      alt={project.title}
+                      className="rounded-xl w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="min-h-fit w-full rounded-b-xl p-5">
+                    <div className=" space-y-3 h-full rounded-b-xl">
+                      <div className="flex item-center justify-between">
+                        <h2 className="text-white text-[1.5rem] font-bold">
+                          {project.title}
+                        </h2>
 
-                      <p className="text-xs font-medium flex rounded-full px-3 bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
-                        <CatIcon className="text-sm" />
-                        {project.category}
+                        <p className="text-xs font-medium flex rounded-full px-3 bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
+                          <CatIcon className="text-sm" />
+                          {project.category}
+                        </p>
+                      </div>
+                      <p className="text-gray-200 text-sm leading-5 line-clamp-4 sm:line-clamp-5">
+                        {project.description}
                       </p>
-                    </div>
-                    <p className="text-gray-200 text-sm leading-5 line-clamp-4 sm:line-clamp-5">
-                      {project.description}
-                    </p>
-                    <div className="flex gap-2 my-4 w-full flex-wrap">
-                      {project.tech_stack.map((tech, idx) => {
-                        const Icon = tech.icon;
-                        return (
-                          <div
-                            key={idx}
-                            className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
-                          >
-                            <Icon className={`text-xl ${tech.color}`}></Icon>
-                            <h4 className="text-xs font-bold text-white">
-                              {tech.name}
-                            </h4>
-                          </div>
-                        );
-                      })}
+                      <div className="flex gap-2 my-4 w-full flex-wrap">
+                        {project.tech_stack.map((tech, idx) => {
+                          const Icon = tech.icon;
+                          return (
+                            <div
+                              key={idx}
+                              className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
+                            >
+                              <Icon className={`text-xl ${tech.color}`}></Icon>
+                              <h4 className="text-xs font-bold text-white">
+                                {tech.name}
+                              </h4>
+                            </div>
+                          );
+                        })}
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
-      </div>
+                </motion.div>
+              );
+            })}
+          {activeTab === "tab3" &&
+            figmaProjects?.map((project, index) => {
+              const CatIcon = project.icon;
+              return (
+                <motion.div
+                  key={index}
+                  variants={cardVarient}
+                  className="bg-white/10 backdrop-blur-md rounded-xl min-h-fit w-full  cursor-pointer"
+                >
+                  <div className="p-2">
+                    <img
+                      src={project?.thumbnail}
+                      alt={project?.title}
+                      className="rounded-xl w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="min-h-fit w-full rounded-b-xl p-5">
+                    <div className=" space-y-3 h-full rounded-b-xl">
+                      <div className="flex item-center justify-between">
+                        <h2 className="text-white text-[1.5rem] font-bold">
+                          {project?.title}
+                        </h2>
+
+                        <p className="text-xs font-medium flex rounded-full px-3 bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
+                          <CatIcon className="text-sm" />
+                          {project?.category}
+                        </p>
+                      </div>
+                      <p className="text-gray-200 text-sm leading-5 line-clamp-4 sm:line-clamp-5">
+                        {project?.description}
+                      </p>
+                      <div className="flex gap-2 my-4 w-full flex-wrap">
+                        {project.tool.map((tech, idx) => {
+                          const Icon = tech.icon;
+                          return (
+                            <div
+                              key={idx}
+                              className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
+                            >
+                              <Icon className={`text-xl ${tech.color}`}></Icon>
+                              <h4 className="text-xs font-bold text-white">
+                                {tech.label}
+                              </h4>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })}
+        </motion.div>
+      </AnimatePresence>
     </div>
   );
 }

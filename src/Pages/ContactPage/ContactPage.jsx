@@ -34,9 +34,9 @@ export default function ContactPage() {
 
   return (
     <div
-      className={`max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20  flex flex-col pb-5 ${isSmallScreen ? "gap-5 md:pt-2" : "gap-10 md:pt-20"} min-h-[calc(100vh-120px)]`}
+      className={`max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20  flex flex-col justify-center pb-5 ${isSmallScreen ? "gap-5 md:pt-2" : "gap-10 md:pt-20"} min-h-[calc(100vh-120px)]`}
     >
-      <div className="text-[2.5rem] md:text-[3rem] font-black flex justify-center">
+      <div className="text-[2.5rem] md:text-[3rem] font-black flex justify-center pt-10">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function ContactPage() {
       </div>
 
       <div
-        className={`flex justify-between flex-wrap items-start gap-y-10 md:gap-x-16 mt-5 `}
+        className={`flex justify-between flex-wrap items-start gap-y-10 md:gap-x-16 pt-10 `}
       >
         <div className="text-white basis-[100%] lg:basis-[45%] w-full text-center md:text-start">
           <h3 className="text-[1.4rem] md:text-[1.8rem] pb-10 font-semibold bg-gradient-to-r from-purple-500 to-pink-600 bg-clip-text text-transparent">
