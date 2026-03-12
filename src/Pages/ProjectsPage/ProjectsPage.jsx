@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import GradientText from "../../components/GradientText/GradientText";
-import { webProjects, figmaProjects } from "./ProjectData";
+import { allProjects } from "./ProjectData";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaCode } from "react-icons/fa6";
 import { IoLogoFigma } from "react-icons/io5";
 
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState("tab1");
+
+  const webProjects = allProjects.filter(
+    (project) => project?.category === "Web",
+  );
+  const figmaProjects = allProjects.filter(
+    (project) => project?.category === "UI / UX",
+  );
 
   const containerVarient = {
     hidden: {},
@@ -84,7 +91,7 @@ export default function ProjectsPage() {
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-cols-max gap-5 "
         >
           {activeTab === "tab1" &&
-            webProjects?.map((project, index) => {
+            allProjects?.map((project, index) => {
               const CatIcon = project.icon;
               return (
                 <motion.div
@@ -94,7 +101,7 @@ export default function ProjectsPage() {
                 >
                   <div className="p-2">
                     <img
-                      src={project.image_path}
+                      src={project.thumbnail}
                       alt={project.title}
                       className="rounded-xl w-full h-full object-cover"
                     />
@@ -146,7 +153,7 @@ export default function ProjectsPage() {
                 >
                   <div className="p-2">
                     <img
-                      src={project.image_path}
+                      src={project.thumbnail}
                       alt={project.title}
                       className="rounded-xl w-full h-full object-cover"
                     />
@@ -200,7 +207,7 @@ export default function ProjectsPage() {
                     <img
                       src={project?.thumbnail}
                       alt={project?.title}
-                      className="rounded-xl w-full h-full object-cover"
+                      className="rounded-xl w-full h-full object-cover max-h-[250px] "
                     />
                   </div>
                   <div className="min-h-fit w-full rounded-b-xl p-5">
@@ -219,7 +226,7 @@ export default function ProjectsPage() {
                         {project?.description}
                       </p>
                       <div className="flex gap-2 my-4 w-full flex-wrap">
-                        {project.tool.map((tech, idx) => {
+                        {project?.tech_stack?.map((tech, idx) => {
                           const Icon = tech.icon;
                           return (
                             <div
@@ -228,7 +235,7 @@ export default function ProjectsPage() {
                             >
                               <Icon className={`text-xl ${tech.color}`}></Icon>
                               <h4 className="text-xs font-bold text-white">
-                                {tech.label}
+                                {tech.name}
                               </h4>
                             </div>
                           );
