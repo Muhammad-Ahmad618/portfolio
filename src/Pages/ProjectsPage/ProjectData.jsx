@@ -10,9 +10,50 @@ import { SiReactquery } from "react-icons/si";
 import { PiFigmaLogoDuotone } from "react-icons/pi";
 import { BsBrushFill } from "react-icons/bs";
 import { FaCode } from "react-icons/fa6";
+import { SiNextdotjs, SiTypescript, SiShadcnui, SiGraphql } from "react-icons/si";
+import { TbApi } from "react-icons/tb";
+import { GiBearFace } from "react-icons/gi";
 
 export const allProjects = [
   // Web Projects
+  {
+    thumbnail: "/super_app_admin _panel.webp",
+    title: "Lumi Super App",
+    category: "Web",
+    icon: FaCode,
+    type: "Multuvendor E-commerce Platform",
+    description:
+      "A comprehensive multi-vendor e-commerce admin dashboard designed to manage diverse retail stores, food chains, service centers, coupons, and employees. Features role-based access control for store/service-center owners and a super admin console with full system access.",
+    url: "",
+    github: "",
+    tech_stack: [
+      { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
+      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
+      { name: "ShadCn", icon: SiShadcnui, color: "text-white" },
+      { name: "REST api", icon: TbApi, color: "text-yellow-400" },
+      { name: "Zustand", icon: GiBearFace, color: "text-orange-500" },
+      { name: "React Query", icon: SiReactquery, color: "text-red-500" },
+    ],
+  },
+  {
+    thumbnail: "/enatega_admin.webp",
+    title: "Enatega Admin Panel",
+    category: "Web",
+    icon: FaCode,
+    type: "Multuvendor E-commerce Platform",
+    description:
+      "A highly efficient multi-vendor e-commerce admin panel developed for managing stores, food chains, service centers, coupons, and employees. Features detailed analytics, system configuration tools, and granular role-based access control for store owners and super admins.",
+    url: "",
+    github: "",
+    tech_stack: [
+      { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
+      { name: "ShadCn", icon: SiShadcnui, color: "text-white" },
+      { name: "Graph QL", icon: SiGraphql, color: "text-pink-600" },
+      { name: "Zustand", icon: GiBearFace, color: "text-orange-500" },
+    ],
+  },
   {
     thumbnail: "/urovision.webp",
     title: "UroVision",
@@ -72,36 +113,6 @@ export const allProjects = [
         icon: BiSolidEnvelopeOpen,
         color: "text-orange-400",
       },
-    ],
-  },
-  {
-    thumbnail: "/tech_nova.webp",
-    title: "Tech Nova",
-    category: "Web",
-    icon: FaCode,
-    type: "Business Website",
-    description:
-      "A polished business website for a software house showcasing services, team, and project portfolio. Emphasizes performance with optimized asset loading, smooth scroll-triggered animations, and a fully responsive layout across all devices.",
-    url: "https://tech-nova-gamma.vercel.app/",
-    github: "",
-    tech_stack: [
-      { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
-      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
-    ],
-  },
-  {
-    thumbnail: "/Devsphere.webp",
-    title: "DevSphere",
-    category: "Web",
-    icon: FaCode,
-    type: "Business Website",
-    description:
-      "A sleek portfolio website for a software house with professional service presentation, team showcase, and project gallery. Features clean navigation patterns and a modern dark-themed design system.",
-    url: "https://dev-sphere-delta.vercel.app/",
-    github: "",
-    tech_stack: [
-      { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
-      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
     ],
   },
 

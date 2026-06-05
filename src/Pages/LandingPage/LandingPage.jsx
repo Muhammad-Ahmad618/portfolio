@@ -9,8 +9,8 @@ import AboutSection from "../../components/AboutSection/AboutSection";
 export default function LandingPage() {
   return (
     <>
-      <div className="max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-24">
-        <div className="py-28 sm:py-0 font-primary flex flex-wrap items-center justify-center gap-y-10 lg:gap-x-20 min-h-[calc(100vh-120px)]">
+      <div className="max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-24 mt-36 md:mt-10 xl:mt-0">
+        <div className="font-primary flex flex-wrap items-center justify-center gap-y-10 lg:gap-x-20 md:min-h-[calc(100vh-120px)]">
           <div className="text-white font-bold text-[2.5rem] sm:text-[3rem] w-full basis-[100%] lg:basis-[45%] space-y-2">
             <h1 className="text-xl sm:text-2xl font-semibold">
               Software Engineer
@@ -59,7 +59,7 @@ export default function LandingPage() {
                   <a
                     href="/Muhammad_Ahmad_resume.pdf"
                     download
-                    className="flex items-center justify-center text-gray-400 hover:text-white gap-x-2 border text-base font-normal px-5 rounded-xl bg-white/5  border-white/10 hover:border-purple-500/40 py-3 cursor-pointer duration-300 ease-in-out transition-all"
+                    className="flex items-center justify-center text-white hover:text-purple-400 gap-x-2 border text-base font-normal px-5 rounded-xl bg-white/5  border-white/30 hover:border-purple-500/40 py-3 cursor-pointer duration-300 ease-in-out transition-all"
                   >
                     Download Resume <IoMdDownload className="text-[1.2rem]" />
                   </a>
@@ -68,7 +68,7 @@ export default function LandingPage() {
             </div>
           </div>
           {/* Auto type code */}
-          <div className="basis-[100%] lg:basis-[45%] w-full ">
+          <div className="hidden md:block basis-[100%] lg:basis-[45%] w-full ">
             <div className="bg-gradient-to-r from-gray-950 via-gray-800 to-gray-900 p-5 rounded-t-xl flex gap-x-5 items-center">
               <ul className="flex gap-x-3">
                 <li className="p-1.5 rounded-[100%] bg-red-500"></li>

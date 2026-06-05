@@ -29,7 +29,7 @@ const socialLinks = [
 
 export default function AboutSection() {
   return (
-    <div className="max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-24 pb-20">
+    <div className="max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-24 pb-20 my-10">
       <div className="relative">
         {/* Decorative gradient blur */}
         <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[400px] h-[200px] bg-purple-600/10 rounded-full blur-[100px] pointer-events-none"></div>

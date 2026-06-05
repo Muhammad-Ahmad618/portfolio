@@ -42,7 +42,7 @@ export default function React_contact_form() {
   };
 
   return (
-    <div className="border-2 border-purple-400 p-5 sm:p-10 rounded-2xl">
+    <div className="border bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl border-gray-600 p-5 sm:p-10 rounded-2xl">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-y-10"
