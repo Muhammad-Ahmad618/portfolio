@@ -10,7 +10,13 @@ import { SiReactquery } from "react-icons/si";
 import { PiFigmaLogoDuotone } from "react-icons/pi";
 import { BsBrushFill } from "react-icons/bs";
 import { FaCode } from "react-icons/fa6";
-import { SiNextdotjs, SiTypescript, SiShadcnui, SiGraphql } from "react-icons/si";
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiShadcnui,
+  SiGraphql,
+} from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { GiBearFace } from "react-icons/gi";
 
@@ -48,6 +54,7 @@ export const allProjects = [
     github: "",
     tech_stack: [
       { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
       { name: "ShadCn", icon: SiShadcnui, color: "text-white" },
       { name: "Graph QL", icon: SiGraphql, color: "text-pink-600" },
@@ -66,6 +73,7 @@ export const allProjects = [
     github: "",
     tech_stack: [
       { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
+      { name: "JavaScript", icon: SiJavascript, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
       { name: "Axios", icon: SiAxios, color: "text-purple-400" },
       { name: "Express.js", icon: SiExpress, color: "text-white" },
@@ -85,6 +93,7 @@ export const allProjects = [
     github: "",
     tech_stack: [
       { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
+      { name: "JavaScript", icon: SiJavascript, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
       { name: "Axios", icon: SiAxios, color: "text-purple-400" },
       { name: "Zustand", icon: SiReactquery, color: "text-orange-400" },
@@ -104,6 +113,7 @@ export const allProjects = [
     github: "",
     tech_stack: [
       { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
+      { name: "JavaScript", icon: SiJavascript, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
       { name: "Axios", icon: SiAxios, color: "text-purple-400" },
       { name: "Vite", icon: SiVite, color: "text-yellow-400" },
