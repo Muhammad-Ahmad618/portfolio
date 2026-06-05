@@ -1,57 +1,48 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect } from "react";
 import Typed from "typed.js";
 
-let hasAnimated = false;
-
-function ProfileCode() {
-  const [done, setDone] = useState(hasAnimated);
-  const typedE1 = useRef(null);
-  const codeString = `const profile = {
+const codeString = `const developer = {
   name: 'Muhammad Ahmad',
-  title: 'Frontend Developer | Software Engineer',
+  role: 'Frontend Developer',
+  location: 'Islamabad, Pakistan',
   skills: [
-    'Next.js', 'React.js', 'TypeScript', 'JavaScript', 'Tailwind CSS',
-    'HTML5', 'CSS3', 'Bootstrap', 'Responsive Design', 'API Integration',
-    'Context API', 'Zustand', 'Git', 'UI/UX', 'Figma', 'Python',
+    'React.js', 'Next.js', 'TypeScript','JavaScript',
+    'Tailwind CSS', 'GraphQL','REST APIs', 'Zustand',
+    'Git', 'React Query','Node.js', 'Express.js', 'PostgreSQL'
   ],
-  hardWorker: true,
-  quickLearner: true,
-  problemSolver: true,
-  hireable: function() {
-    return (
-      this.hardWorker &&
-      this.problemSolver &&
-      this.skills.length >= 5
-    );
-  }
+  projects: [
+    'FixRight Admin Panel',
+    'Lumi Foods Super App',
+    'Enatega Food Delivery',
+    'UroVision - AI Kidney Detection'
+  ],
+  status: 'Open to Work',
+  contact: 'muhammad.ahmad.86.18@gmail.com'
 };`;
 
-  useEffect(() => {
-    if (!hasAnimated) {
-      const typed = new Typed(typedE1.current, {
-        strings: [codeString],
-        typeSpeed: 10,
-        showCursor: true,
-        cursorChar: "|",
-        onComplete: () => {
-          hasAnimated = true;
-          setDone(true);
-        },
-      });
+function ProfileCode() {
+  const elRef = useRef(null);
+  const hasAnimated = useRef(false);
 
-      return () => {
-        typed.destroy();
-      };
-    }
+  useEffect(() => {
+    if (hasAnimated.current) return;
+
+    const typed = new Typed(elRef.current, {
+      strings: [codeString],
+      typeSpeed: 10,
+      showCursor: true,
+      cursorChar: "|",
+      onComplete: () => {
+        hasAnimated.current = true;
+      },
+    });
+
+    return () => typed.destroy();
   }, []);
 
   return (
-    <div className=" text-white font-mono text-sm min-h-[25rem] ">
-      {done ? (
-        <pre className="whitespace-pre-wrap">{codeString}</pre>
-      ) : (
-        <pre ref={typedE1} className="whitespace-pre-wrap" />
-      )}
+    <div className="text-white font-mono text-sm min-h-[24rem]">
+      <pre ref={elRef} className="whitespace-pre-wrap" />
     </div>
   );
 }

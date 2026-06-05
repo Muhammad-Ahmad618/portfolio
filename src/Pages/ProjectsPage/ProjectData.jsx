@@ -4,7 +4,6 @@ import { RiNodejsLine } from "react-icons/ri";
 import { SiAxios } from "react-icons/si";
 import { SiExpress } from "react-icons/si";
 import { SiVite } from "react-icons/si";
-import { BiLogoRedux } from "react-icons/bi";
 import { SiGoogleforms } from "react-icons/si";
 import { BiSolidEnvelopeOpen } from "react-icons/bi";
 import { SiReactquery } from "react-icons/si";
@@ -15,43 +14,22 @@ import { FaCode } from "react-icons/fa6";
 export const allProjects = [
   // Web Projects
   {
-    thumbnail: "/stellar_academy.webp",
-    title: "Stellar Academy",
-    category: "Web",
-    icon: FaCode,
-    type: "Business Site",
-    description:
-      "Stellar Academy is a responsive, modern website built for an educational institution to streamline communication and student engagement. The platform focuses on clarity, accessibility, and ease of use, tailored for its users.",
-    url: "https://stellar-academy-eta.vercel.app/",
-    tech_stack: [
-      { name: "React JS", icon: RiReactjsFill, color: "text-blue-400" },
-      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
-      { name: "Axios", icon: SiAxios, color: "text-purple-500" },
-      { name: "Vite", icon: SiVite, color: "text-white" },
-      { name: "Form API", icon: SiGoogleforms, color: "text-green-500" },
-      {
-        name: "Email JS",
-        icon: BiSolidEnvelopeOpen,
-        color: "text-orange-500 rotate-45",
-      },
-    ],
-  },
-  {
     thumbnail: "/urovision.webp",
     title: "UroVision",
     category: "Web",
     icon: FaCode,
-    type: "Health Care App",
+    type: "Healthcare Application",
     description:
-      "UroVision is a healthcare-focused web application designed to assist doctors in managing kidney stone detection and patient treatment workflows. The project aims to streamline clinical operations with an intuitive, responsive interface.",
+      "A healthcare web application designed to assist urologists in managing kidney stone detection and patient treatment workflows. Features include patient record management, diagnostic image uploads, and treatment tracking — all through a responsive, clinical-grade interface.",
     url: "https://urovision-web.vercel.app/",
+    github: "",
     tech_stack: [
-      { name: "React JS", icon: RiReactjsFill, color: "text-blue-400" },
+      { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
-      { name: "Axios", icon: SiAxios, color: "text-purple-500" },
-      { name: "Express JS", icon: SiExpress, color: "text-white" },
-      { name: "Node JS", icon: RiNodejsLine, color: "text-green-800" },
-      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-800" },
+      { name: "Axios", icon: SiAxios, color: "text-purple-400" },
+      { name: "Express.js", icon: SiExpress, color: "text-white" },
+      { name: "Node.js", icon: RiNodejsLine, color: "text-green-500" },
+      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-500" },
     ],
   },
   {
@@ -59,17 +37,41 @@ export const allProjects = [
     title: "Origin Store",
     category: "Web",
     icon: FaCode,
-    type: "Vide Game Store",
+    type: "Video Game Store",
     description:
-      "Origin is a modern, responsive web application designed to serve as an online video game store. The project focuses on delivering an engaging user experience through sleek UI/UX design and dynamic content integration.",
+      "A dynamic video game storefront with real-time game data fetched via API integration, advanced filtering, favorites system with persistent state management, and smooth page transitions. Built with a focus on performance using TanStack Query for caching and Zustand for lightweight state.",
     url: "https://iris-engine.vercel.app/",
+    github: "",
     tech_stack: [
-      { name: "React JS", icon: RiReactjsFill, color: "text-blue-400" },
+      { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
-      { name: "Axios", icon: SiAxios, color: "text-purple-500" },
-      { name: "Zustand", icon: BiLogoRedux, color: "text-blue-500" },
+      { name: "Axios", icon: SiAxios, color: "text-purple-400" },
+      { name: "Zustand", icon: SiReactquery, color: "text-orange-400" },
       { name: "TanStack Query", icon: SiReactquery, color: "text-red-500" },
-      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-800" },
+      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-500" },
+    ],
+  },
+  {
+    thumbnail: "/stellar_academy.webp",
+    title: "Stellar Academy",
+    category: "Web",
+    icon: FaCode,
+    type: "Educational Platform",
+    description:
+      "A responsive educational platform built for an institution to streamline student engagement and communication. Features include course listings, contact forms with EmailJS integration, and optimized performance through Vite's build pipeline.",
+    url: "https://stellar-academy-eta.vercel.app/",
+    github: "",
+    tech_stack: [
+      { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
+      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
+      { name: "Axios", icon: SiAxios, color: "text-purple-400" },
+      { name: "Vite", icon: SiVite, color: "text-yellow-400" },
+      { name: "Formspree", icon: SiGoogleforms, color: "text-green-500" },
+      {
+        name: "EmailJS",
+        icon: BiSolidEnvelopeOpen,
+        color: "text-orange-400",
+      },
     ],
   },
   {
@@ -77,12 +79,13 @@ export const allProjects = [
     title: "Tech Nova",
     category: "Web",
     icon: FaCode,
-    type: "Business Site",
+    type: "Business Website",
     description:
-      "Tech Nova is a fully responsive business website developed for a software house to showcase its services, projects, and brand identity. The project emphasizes performance, modern design, and smooth user interaction.",
+      "A polished business website for a software house showcasing services, team, and project portfolio. Emphasizes performance with optimized asset loading, smooth scroll-triggered animations, and a fully responsive layout across all devices.",
     url: "https://tech-nova-gamma.vercel.app/",
+    github: "",
     tech_stack: [
-      { name: "React JS", icon: RiReactjsFill, color: "text-blue-400" },
+      { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
     ],
   },
@@ -91,28 +94,30 @@ export const allProjects = [
     title: "DevSphere",
     category: "Web",
     icon: FaCode,
-    type: "Business Site",
+    type: "Business Website",
     description:
-      "DevSphere is a sleek, responsive portfolio website designed for a software house to present its services, team, and project portfolio. The goal was to create a professional online presence with intuitive navigation and a clean, modern interface.",
+      "A sleek portfolio website for a software house with professional service presentation, team showcase, and project gallery. Features clean navigation patterns and a modern dark-themed design system.",
     url: "https://dev-sphere-delta.vercel.app/",
+    github: "",
     tech_stack: [
-      { name: "React JS", icon: RiReactjsFill, color: "text-blue-400" },
+      { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
     ],
   },
 
-  // Figma Projects
+  // UI/UX Projects — keeping the strongest ones
   {
     thumbnail: "/UI/Gear Box.webp",
     title: "Gear Box",
     category: "UI / UX",
     icon: BsBrushFill,
-    type: "E-commerce Store",
+    type: "E-commerce Design",
     description:
-      "Gear Box is a modern, responsive e-commerce website built for a fashion retailer to showcase its products and engage customers. The project emphasizes user experience, intuitive navigation, and a visually appealing interface.",
+      "A high-fidelity e-commerce UI concept for a fashion retailer. Designed with a focus on conversion-optimized product pages, intuitive category navigation, and a streamlined checkout flow. Includes responsive variants for mobile and tablet.",
     url: "",
+    github: "",
     tech_stack: [
-      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-800" },
+      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-500" },
     ],
   },
   {
@@ -120,38 +125,13 @@ export const allProjects = [
     title: "Burger Spot",
     category: "UI / UX",
     icon: BsBrushFill,
-    type: "Restaurant WebApp",
+    type: "Restaurant App Design",
     description:
-      "Burger Spot is a modern, responsive restaurant web application built for a restaurant to showcase its products and engage customers. The project emphasizes user experience, intuitive navigation, and a visually appealing interface.",
+      "A vibrant restaurant web application design featuring a rich visual menu, online ordering flow, and table reservation system. Uses warm color tones and appetizing food photography to drive user engagement.",
     url: "",
+    github: "",
     tech_stack: [
-      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-800" },
-    ],
-  },
-  {
-    thumbnail: "/UI/Toronto CupCake.webp",
-    title: "Toronto CupCake",
-    category: "UI / UX",
-    icon: BsBrushFill,
-    type: "Bakery Website",
-    description:
-      "Toronto CupCake is a modern, responsive bakery website built for a bakery to showcase its products and engage customers. The project emphasizes user experience, intuitive navigation, and a visually appealing interface.",
-    url: "",
-    tech_stack: [
-      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-800" },
-    ],
-  },
-  {
-    thumbnail: "/UI/Video Game Store.webp",
-    title: "Video Game Store",
-    category: "UI / UX",
-    icon: BsBrushFill,
-    type: "E-commerce Store",
-    description:
-      "Video Game Store is a modern, responsive e-commerce website built for a game store to showcase its products and engage customers. The project emphasizes user experience, intuitive navigation, and a visually appealing interface.",
-    url: "",
-    tech_stack: [
-      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-800" },
+      { name: "Figma", icon: PiFigmaLogoDuotone, color: "text-pink-500" },
     ],
   },
 ];

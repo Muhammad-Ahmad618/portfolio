@@ -1,16 +1,17 @@
 import React from "react";
-import { motion } from "framer-motion";
 import GradientText from "../../components/GradientText/GradientText";
 import { IoCalendarClearOutline } from "react-icons/io5";
 import { experience } from "./data";
+import { motion } from "framer-motion";
 
-export default function ExperincePage() {
+export default function ExperiencePage() {
   return (
     <div className=" max-w-screen-2xl mx-auto px-5 sm:px-14 lg:px-20 my-20 md:mt-10">
       <div className="text-center text-[2.5rem] md:text-[3rem] font-black flex flex-col items-center justify-center">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <GradientText
@@ -24,7 +25,8 @@ export default function ExperincePage() {
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mt-4 text-lg text-white mx-auto font-medium"
         >
@@ -66,8 +68,8 @@ export default function ExperincePage() {
                   </p>
                 </span>
               </div>
-              <div className="flex items-center gap-x-5 mt-3">
-                <div className="w-1 h-[7rem] min-[440px]:h-[7rem] bg-purple-700 rounded-full"></div>
+              <div className="flex gap-x-5 mt-3">
+                <div className="w-1 min-h-full bg-purple-700 rounded-full shrink-0"></div>
                 <ul className="text-sm  space-y-2 list-none">
                   {exp.description.map((points, index) => (
                     <li

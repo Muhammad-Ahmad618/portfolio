@@ -2,8 +2,79 @@ import React, { useState } from "react";
 import GradientText from "../../components/GradientText/GradientText";
 import { allProjects } from "./ProjectData";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCode } from "react-icons/fa6";
+import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
 import { IoLogoFigma } from "react-icons/io5";
+
+function ProjectCard({ project, variants }) {
+  const CatIcon = project.icon;
+
+  return (
+    <motion.div
+      variants={variants}
+      className="bg-white/[0.06] backdrop-blur-md rounded-xl min-h-fit w-full border border-white/5 hover:border-purple-500/30 transition-all duration-500 group"
+    >
+      <div className="p-2 overflow-hidden rounded-t-xl">
+        <img
+          src={project.thumbnail}
+          alt={project.title}
+          className="rounded-lg w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+      </div>
+      <div className="min-h-fit w-full rounded-b-xl p-5">
+        <div className="space-y-3 h-full rounded-b-xl">
+          <div className="flex items-center justify-between">
+            <h2 className="text-white text-[1.4rem] font-bold">
+              {project.title}
+            </h2>
+
+            <p className="text-xs font-medium px-3 py-1 flex rounded-full bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white shrink-0">
+              <CatIcon className="text-xs" />
+              {project.category}
+            </p>
+          </div>
+
+          <p className="text-xs text-purple-300/80 font-medium uppercase tracking-wider">
+            {project.type}
+          </p>
+
+          <p className="text-gray-300 text-sm leading-6 line-clamp-3">
+            {project.description}
+          </p>
+
+          <div className="flex gap-2 my-3 w-full flex-wrap">
+            {project.tech_stack.map((tech, idx) => {
+              const Icon = tech.icon;
+              return (
+                <div
+                  key={idx}
+                  className="flex items-center gap-x-1.5 px-3 py-1 bg-white/5 border border-white/10 rounded-full transition-all duration-300 ease-in-out hover:border-purple-500/30"
+                >
+                  <Icon className={`text-base ${tech.color}`}></Icon>
+                  <h4 className="text-xs font-medium text-gray-300">
+                    {tech.name}
+                  </h4>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Action Links */}
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-x-2 text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors duration-300 mt-2"
+            >
+              <FaExternalLinkAlt className="text-xs" />
+              View Live Demo
+            </a>
+          )}
+        </div>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function ProjectsPage() {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -15,30 +86,42 @@ export default function ProjectsPage() {
     (project) => project?.category === "UI / UX",
   );
 
-  const containerVarient = {
+  const containerVariant = {
     hidden: {},
     visible: {
       transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
+        staggerChildren: 0.1,
+        delayChildren: 0.05,
       },
     },
   };
 
-  const cardVarient = {
+  const cardVariant = {
     hidden: {
       opacity: 0,
-      y: 10,
+      y: 15,
     },
     visible: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1,
-        ease: "easeIn",
+        duration: 0.6,
+        ease: "easeOut",
       },
     },
   };
+
+  const getProjects = () => {
+    if (activeTab === "tab2") return webProjects;
+    if (activeTab === "tab3") return figmaProjects;
+    return allProjects;
+  };
+
+  const tabs = [
+    { id: "tab1", label: "All", icon: null },
+    { id: "tab2", label: "Web Development", icon: <FaCode /> },
+    { id: "tab3", label: "UI / UX", icon: <IoLogoFigma /> },
+  ];
 
   return (
     <div className="max-w-screen-2xl mx-auto md:pb-20 px-5 sm:px-14 lg:px-20 min-h-screen my-20 md:my-10 ">
@@ -58,194 +141,39 @@ export default function ProjectsPage() {
         </motion.h1>
       </div>
 
-      <div className="text-white flex flex-wrap gap-2 md:gap-5 justify-center items-center my-7 ">
-        <button
-          className={`py-2 px-5 rounded-full text-xs font-medium cursor-pointer  ${activeTab === "tab1" ? "bg-gradient-to-r from-purple-600 to-indigo-700" : "bg-gray-800"}   flex items-center gap-x-2 transition-all duration-300 shadow-purple-400 hover:shadow-[0_0_10px_rgba(0,0,0,0.4)]`}
-          onClick={() => setActiveTab("tab1")}
-        >
-          All
-        </button>
-        <button
-          className={`py-2 px-5 rounded-full text-xs font-medium cursor-pointer  ${activeTab === "tab2" ? "bg-gradient-to-r from-purple-600 to-indigo-700" : "bg-gray-800"}   flex items-center gap-x-2  shadow-purple-400 hover:shadow-[0_0_10px_rgba(0,0,0,0.4)]`}
-          onClick={() => setActiveTab("tab2")}
-        >
-          <FaCode />
-          Web Development
-        </button>
-        <button
-          className={`py-2 px-5 rounded-full text-xs font-medium cursor-pointer  ${activeTab === "tab3" ? "bg-gradient-to-r from-purple-600 to-indigo-700" : "bg-gray-800"}   flex items-center gap-x-2  shadow-purple-400 hover:shadow-[0_0_10px_rgba(0,0,0,0.4)]`}
-          onClick={() => setActiveTab("tab3")}
-        >
-          <IoLogoFigma />
-          UI /UX
-        </button>
+      <div className="text-white flex flex-wrap gap-2 md:gap-3 justify-center items-center my-7 ">
+        {tabs.map((tab) => (
+          <button
+            key={tab.id}
+            className={`py-2.5 px-6 rounded-full text-xs font-medium cursor-pointer ${
+              activeTab === tab.id
+                ? "bg-gradient-to-r from-purple-600 to-indigo-700 shadow-lg shadow-purple-500/20"
+                : "bg-white/5 border border-white/10 hover:border-purple-500/30"
+            } flex items-center gap-x-2 transition-all duration-300`}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            {tab.icon}
+            {tab.label}
+          </button>
+        ))}
       </div>
 
       <AnimatePresence mode="wait">
         <motion.div
           key={activeTab}
-          variants={containerVarient}
+          variants={containerVariant}
           initial="hidden"
           animate="visible"
           exit="hidden"
           className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 auto-cols-max gap-5 "
         >
-          {activeTab === "tab1" &&
-            allProjects?.map((project, index) => {
-              const CatIcon = project.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={cardVarient}
-                  className="bg-white/10 backdrop-blur-md rounded-xl min-h-fit w-full  cursor-pointer"
-                >
-                  <div className="p-2">
-                    <img
-                      src={project.thumbnail}
-                      alt={project.title}
-                      className="rounded-xl w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="min-h-fit w-full rounded-b-xl p-5">
-                    <div className=" space-y-3 h-full rounded-b-xl">
-                      <div className="flex item-center justify-between">
-                        <h2 className="text-white text-[1.5rem] font-bold">
-                          {project.title}
-                        </h2>
-
-                        <p className="text-xs font-medium px-3 flex rounded-full bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
-                          <CatIcon className="text-xs" />
-                          {project.category}
-                        </p>
-                      </div>
-                      <p className="text-gray-200 text-sm leading-5 line-clamp-4 sm:line-clamp-5">
-                        {project.description}
-                      </p>
-                      <div className="flex gap-2 my-4 w-full flex-wrap">
-                        {project.tech_stack.map((tech, idx) => {
-                          const Icon = tech.icon;
-                          return (
-                            <div
-                              key={idx}
-                              className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
-                            >
-                              <Icon className={`text-xl ${tech.color}`}></Icon>
-                              <h4 className="text-xs font-bold text-white">
-                                {tech.name}
-                              </h4>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          {activeTab === "tab2" &&
-            webProjects?.map((project, index) => {
-              const CatIcon = project.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={cardVarient}
-                  className="bg-white/10 backdrop-blur-md rounded-xl min-h-fit w-full  cursor-pointer"
-                >
-                  <div className="p-2">
-                    <img
-                      src={project.thumbnail}
-                      alt={project.title}
-                      className="rounded-xl w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="min-h-fit w-full rounded-b-xl p-5">
-                    <div className=" space-y-3 h-full rounded-b-xl">
-                      <div className="flex item-center justify-between">
-                        <h2 className="text-white text-[1.5rem] font-bold">
-                          {project.title}
-                        </h2>
-
-                        <p className="text-xs font-medium flex rounded-full px-3 bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
-                          <CatIcon className="text-sm" />
-                          {project.category}
-                        </p>
-                      </div>
-                      <p className="text-gray-200 text-sm leading-5 line-clamp-4 sm:line-clamp-5">
-                        {project.description}
-                      </p>
-                      <div className="flex gap-2 my-4 w-full flex-wrap">
-                        {project.tech_stack.map((tech, idx) => {
-                          const Icon = tech.icon;
-                          return (
-                            <div
-                              key={idx}
-                              className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
-                            >
-                              <Icon className={`text-xl ${tech.color}`}></Icon>
-                              <h4 className="text-xs font-bold text-white">
-                                {tech.name}
-                              </h4>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          {activeTab === "tab3" &&
-            figmaProjects?.map((project, index) => {
-              const CatIcon = project.icon;
-              return (
-                <motion.div
-                  key={index}
-                  variants={cardVarient}
-                  className="bg-white/10 backdrop-blur-md rounded-xl min-h-fit w-full  cursor-pointer"
-                >
-                  <div className="p-2">
-                    <img
-                      src={project?.thumbnail}
-                      alt={project?.title}
-                      className="rounded-xl w-full h-full object-cover max-h-[250px] "
-                    />
-                  </div>
-                  <div className="min-h-fit w-full rounded-b-xl p-5">
-                    <div className=" space-y-3 h-full rounded-b-xl">
-                      <div className="flex item-center justify-between">
-                        <h2 className="text-white text-[1.5rem] font-bold">
-                          {project?.title}
-                        </h2>
-
-                        <p className="text-xs font-medium flex rounded-full px-3 bg-gradient-to-r from-purple-500 to-indigo-700 items-center gap-x-2 text-white">
-                          <CatIcon className="text-sm" />
-                          {project?.category}
-                        </p>
-                      </div>
-                      <p className="text-gray-200 text-sm leading-5 line-clamp-4 sm:line-clamp-5">
-                        {project?.description}
-                      </p>
-                      <div className="flex gap-2 my-4 w-full flex-wrap">
-                        {project?.tech_stack?.map((tech, idx) => {
-                          const Icon = tech.icon;
-                          return (
-                            <div
-                              key={idx}
-                              className="flex items-center gap-x-1 px-3 py-1 bg-gray/60 backdrop-blur-md border border-gray-600 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:bg-gray-800 hover:scale-105"
-                            >
-                              <Icon className={`text-xl ${tech.color}`}></Icon>
-                              <h4 className="text-xs font-bold text-white">
-                                {tech.name}
-                              </h4>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+          {getProjects().map((project, index) => (
+            <ProjectCard
+              key={`${activeTab}-${index}`}
+              project={project}
+              variants={cardVariant}
+            />
+          ))}
         </motion.div>
       </AnimatePresence>
     </div>

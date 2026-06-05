@@ -7,12 +7,42 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body{
   background: #000000;
-background: linear-gradient(134deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(36, 21, 48, 1) 71%, rgba(113, 35, 166, 1) 100%);  
+  background: linear-gradient(134deg,rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 35%, rgba(36, 21, 48, 1) 71%, rgba(113, 35, 166, 1) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 input:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px inherit inset !important;
   -webkit-text-fill-color: white !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #a855f7, #6366f1);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c084fc, #818cf8);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a855f7 rgba(0, 0, 0, 0.3);
 }

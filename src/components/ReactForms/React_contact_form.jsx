@@ -32,7 +32,7 @@ export default function React_contact_form() {
     } catch (error) {
       setStatus({
         type: "error",
-        message: "Error While Sending Message! Please try again",
+        message: "Error While Sending Message! Please try again" + error,
       });
     }
 
@@ -42,7 +42,7 @@ export default function React_contact_form() {
   };
 
   return (
-    <div className="border-2 border-purple-400 bg-gradient-to-r from-gray-950 via-gray-900 to-gray-950 shadow-md shadow-purple-500/30 p-5 sm:p-10 rounded-2xl">
+    <div className="border-2 border-purple-400 p-5 sm:p-10 rounded-2xl">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-y-10"
