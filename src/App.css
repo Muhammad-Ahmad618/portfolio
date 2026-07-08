@@ -44,5 +44,5 @@ input:-webkit-autofill {
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #a855f7 rgba(0, 0, 0, 0.3);
+  scrollbar-color: #8605fe rgba(0, 0, 0, 0.3);
 }

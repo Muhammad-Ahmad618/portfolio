@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import GradientText from "../../components/GradientText/GradientText";
 import { allProjects } from "./ProjectData";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
+import { FaCode, FaGithub } from "react-icons/fa";
 import { IoLogoFigma } from "react-icons/io5";
+import { CiGlobe } from "react-icons/ci";
 
 function ProjectCard({ project, variants }) {
   const CatIcon = project.icon;
@@ -11,7 +12,7 @@ function ProjectCard({ project, variants }) {
   return (
     <motion.div
       variants={variants}
-      className="bg-white/[0.06] backdrop-blur-md rounded-xl min-h-fit w-full border border-white/5 hover:border-purple-500/30 transition-all duration-500 group"
+      className="bg-white/[0.06] backdrop-blur-md rounded-xl w-full border border-white/5 hover:border-purple-500/30 transition-all duration-500 group flex flex-col h-full"
     >
       <div className="p-2 overflow-hidden rounded-t-xl">
         <img
@@ -20,8 +21,9 @@ function ProjectCard({ project, variants }) {
           className="rounded-lg w-full h-[200px] object-cover group-hover:scale-105 transition-transform duration-500"
         />
       </div>
-      <div className="min-h-fit w-full rounded-b-xl p-5">
-        <div className="space-y-3 h-full rounded-b-xl">
+      <div className="w-full rounded-b-xl px-5 pt-5 pb-5 flex flex-col flex-1">
+        {/* Top content wrapper */}
+        <div className="space-y-3 flex-1 flex flex-col">
           <div className="flex items-center justify-between">
             <h2 className="text-white text-[1.4rem] font-bold">
               {project.title}
@@ -33,13 +35,15 @@ function ProjectCard({ project, variants }) {
             </p>
           </div>
 
-          <p className="text-xs text-purple-300/80 font-medium uppercase tracking-wider">
-            {project.type}
-          </p>
+          <div>
+            <p className="text-xs text-purple-300/80 font-medium uppercase tracking-wider">
+              {project.type}
+            </p>
 
-          <p className="text-gray-300 text-sm leading-6 line-clamp-3">
-            {project.description}
-          </p>
+            <p className="text-gray-300 text-sm leading-6 line-clamp-3">
+              {project.description}
+            </p>
+          </div>
 
           <div className="flex gap-2 my-3 w-full flex-wrap">
             {project.tech_stack.map((tech, idx) => {
@@ -57,20 +61,35 @@ function ProjectCard({ project, variants }) {
               );
             })}
           </div>
-
-          {/* Action Links */}
-          {project.url && (
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-x-2 text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors duration-300 mt-2"
-            >
-              <FaExternalLinkAlt className="text-xs" />
-              View Live Demo
-            </a>
-          )}
         </div>
+
+        {/* Action Links */}
+        {(project?.url || project?.github) && (
+          <div className="flex items-center gap-x-5 mt-auto pt-4 border-t border-white/5">
+            {project?.url && (
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-x-2 text-xs font-medium text-white hover:text-purple-500 transition-colors duration-300"
+              >
+                <CiGlobe className="text-xl" />
+                Live Demo
+              </a>
+            )}
+            {project?.github && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-x-2 text-sm font-medium text-white hover:text-purple-500 transition-colors duration-300"
+              >
+                <FaGithub className="text-lg" />
+                Github
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </motion.div>
   );

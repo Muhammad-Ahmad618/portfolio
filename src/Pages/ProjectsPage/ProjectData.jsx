@@ -16,12 +16,32 @@ import {
   SiJavascript,
   SiShadcnui,
   SiGraphql,
+  SiPostgresql,
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { GiBearFace } from "react-icons/gi";
 
 export const allProjects = [
   // Web Projects
+  {
+    thumbnail: "/under_development.png",
+    title: "Vanta",
+    category: "Web",
+    icon: FaCode,
+    type: "Smart Task Manager & Workspace",
+    description:
+      "A smart task manager and workspace application designed to streamline team collaboration, task tracking, and document sharing. (Currently in development)",
+    url: "",
+    github: "https://github.com/Muhammad-Ahmad618/vanta",
+    tech_stack: [
+      { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
+      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
+      { name: "Node.js", icon: RiNodejsLine, color: "text-green-500" },
+      { name: "Express.js", icon: SiExpress, color: "text-white" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-400" },
+    ],
+  },
   {
     thumbnail: "/super_app_admin _panel.webp",
     title: "Lumi Super App",
@@ -70,7 +90,7 @@ export const allProjects = [
     description:
       "A healthcare web application designed to assist urologists in managing kidney stone detection and patient treatment workflows. Features include patient record management, diagnostic image uploads, and treatment tracking — all through a responsive, clinical-grade interface.",
     url: "https://urovision-web.vercel.app/",
-    github: "",
+    github: "https://github.com/Muhammad-Ahmad618/urovision_web",
     tech_stack: [
       { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
       { name: "JavaScript", icon: SiJavascript, color: "text-blue-400" },
@@ -90,7 +110,7 @@ export const allProjects = [
     description:
       "A dynamic video game storefront with real-time game data fetched via API integration, advanced filtering, favorites system with persistent state management, and smooth page transitions. Built with a focus on performance using TanStack Query for caching and Zustand for lightweight state.",
     url: "https://iris-engine.vercel.app/",
-    github: "",
+    github: "https://github.com/Muhammad-Ahmad618/origin",
     tech_stack: [
       { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
       { name: "JavaScript", icon: SiJavascript, color: "text-blue-400" },
@@ -110,7 +130,7 @@ export const allProjects = [
     description:
       "A responsive educational platform built for an institution to streamline student engagement and communication. Features include course listings, contact forms with EmailJS integration, and optimized performance through Vite's build pipeline.",
     url: "https://stellar-academy-eta.vercel.app/",
-    github: "",
+    github: "https://github.com/Muhammad-Ahmad618/stellar_academy",
     tech_stack: [
       { name: "React.js", icon: RiReactjsFill, color: "text-blue-400" },
       { name: "JavaScript", icon: SiJavascript, color: "text-blue-400" },
