@@ -20,9 +20,27 @@ import {
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { GiBearFace } from "react-icons/gi";
+import { LuBoxes } from "react-icons/lu";
 
 export const allProjects = [
   // Web Projects
+  {
+    thumbnail: "/fusion-wok.webp",
+    title: "Fusion Wok",
+    category: "Web",
+    icon: FaCode,
+    type: "Chinese Restaurant Website",
+    description:
+      "A visually rich, fully responsive Chinese restaurant website built as a front-end only application. Features an interactive menu with category filtering, cart and order state management through React Context API, table reservation form, and dedicated sections for specials, offers, and opening hours.",
+    url: "https://fusion-wok.vercel.app/",
+    github: "https://github.com/Muhammad-Ahmad618/fusion-wok",
+    tech_stack: [
+      { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
+      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
+      { name: "Context API", icon: LuBoxes, color: "text-cyan-400" },
+    ],
+  },
   {
     thumbnail: "/under_development.png",
     title: "Vanta",
