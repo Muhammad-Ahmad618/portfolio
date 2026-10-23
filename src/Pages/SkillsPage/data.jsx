@@ -119,16 +119,24 @@ export const technologies = [
     category: "Tools & Platforms",
   },
 
-  // Languages
   {
     id: 17,
+    image:
+      "https://cdn.simpleicons.org/neon",
+    name: "Neon",
+    category: "Tools & Platforms",
+  },
+
+  // Languages
+  {
+    id: 18,
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
     name: "Python",
     category: "Languages",
   },
   {
-    id: 18,
+    id: 19,
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
     name: "JavaScript",
@@ -137,7 +145,7 @@ export const technologies = [
 
   // Backend
   {
-    id: 19,
+    id: 20,
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
     name: "Express.js",
@@ -145,7 +153,7 @@ export const technologies = [
     lighten: true,
   },
   {
-    id: 20,
+    id: 21,
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
     name: "Node.js",
@@ -154,14 +162,14 @@ export const technologies = [
 
   // Database
   {
-    id: 21,
+    id: 22,
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     name: "PostgreSQL",
     category: "Database",
   },
   {
-    id: 22,
+    id: 23,
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
     name: "MongoDB",
@@ -170,7 +178,7 @@ export const technologies = [
 
   // Deployment
   {
-    id: 23,
+    id: 24,
     image:
       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
     name: "Vercel",
@@ -178,10 +186,18 @@ export const technologies = [
     lighten: true,
   },
   {
-    id: 24,
+    id: 25,
     image:
       "https://unpkg.com/@lobehub/icons-static-svg@latest/icons/railway.svg",
     name: "Railway",
+    category: "Deployment",
+    lighten: true,
+  },
+  {
+    id: 26,
+    image:
+      "https://cdn.simpleicons.org/render",
+    name: "Render",
     category: "Deployment",
     lighten: true,
   },

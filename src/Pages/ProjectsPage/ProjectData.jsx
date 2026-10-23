@@ -43,7 +43,7 @@ export const allProjects = [
   },
   {
     thumbnail: "/under_development.png",
-    title: "Vanta",
+    title: "Doable",
     category: "Web",
     icon: FaCode,
     type: "Smart Task Manager & Workspace",
