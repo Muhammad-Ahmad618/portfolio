@@ -16,7 +16,6 @@ export default function LandingPage() {
               Software Engineer
             </h1>
             <GradientText
-              colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
               animationSpeed={3}
               showBorder={false}
             >

@@ -50,7 +50,6 @@ export default function ContactPage() {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <GradientText
-            colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
             animationSpeed={3}
             showBorder={false}
           >

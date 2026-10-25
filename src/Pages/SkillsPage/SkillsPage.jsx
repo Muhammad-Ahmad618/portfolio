@@ -33,7 +33,6 @@ export default function SkillsPage() {
           className="flex text-white gap-x-2 text-[2.5rem] md:text-[3rem] font-black justify-center"
         >
           <GradientText
-            colors={["#ec4899", "#c654ba", "#a855f7", "#7c5ef5", "#6366f1"]}
             animationSpeed={3}
             showBorder={false}
           >

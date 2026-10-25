@@ -1,0 +1,34 @@
+/* Theme switcher widget */
+
+@keyframes ts-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ts-panel {
+  transform-origin: bottom left;
+  animation: ts-panel-in 0.16s ease-out;
+}
+
+/* Colour dot for each theme option. `--swatch-1/2` is re-declared on the
+   owning <li data-theme-id="..."> so every dot shows ITS OWN colours. */
+.ts-swatch {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 9999px;
+  background-image: linear-gradient(135deg, var(--swatch-1), var(--swatch-2));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ts-panel {
+    animation: none;
+  }
+}

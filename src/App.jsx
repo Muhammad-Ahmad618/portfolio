@@ -6,6 +6,7 @@ import SkillsPage from "./Pages/SkillsPage/SkillsPage";
 import ExperiencePage from "./Pages/ExperiencePage/ExperiencePage";
 import ProjectPage from "./Pages/ProjectsPage/ProjectsPage";
 import ContactPage from "./Pages/ContactPage/ContactPage";
+import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
 import {
   BrowserRouter as Router,
   Routes,
@@ -30,6 +31,7 @@ function App() {
         </main>
         <Footer />
       </Router>
+      <ThemeSwitcher />
     </div>
   );
 }

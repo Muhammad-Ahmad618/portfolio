@@ -1,0 +1,166 @@
+/* =========================================================================
+   THEME TOKENS
+   -------------------------------------------------------------------------
+   Every accent colour used in the UI (Tailwind's purple / pink / indigo /
+   blue-600 palette) resolves through CSS custom properties, e.g.
+
+       .text-purple-400      { color: var(--color-purple-400) }
+       .from-purple-500      { --tw-gradient-from: var(--color-purple-500) }
+
+   Re-declaring those variables for a given `data-theme` therefore re-skins
+   the whole site consistently (headings, gradients, borders, shadows, hover
+   states, buttons...) with no component changes.
+
+   IMPORTANT: these rules are deliberately left UN-LAYERED. Tailwind v4 emits
+   its palette inside `@layer theme`, and un-layered rules always win over
+   layered ones, so the values below correctly override the defaults.
+   ========================================================================= */
+
+/* -------------------------------------------------------------------------
+   1. Default theme — Black & Purple (the original look)
+   ---------------------------------------------------------------------- */
+:root,
+[data-theme="purple"] {
+  /* Swatch / accent gradient used by the switcher widget */
+  --swatch-1: #ec4899;
+  --swatch-2: #a855f7;
+
+  /* Animated heading gradient (GradientText component) */
+  --grad-1: #ec4899;
+  --grad-2: #c654ba;
+  --grad-3: #a855f7;
+  --grad-4: #7c5ef5;
+  --grad-5: #6366f1;
+
+  /* Page background glow */
+  --glow-1: #241530;
+  --glow-2: #7123a6;
+}
+
+/* -------------------------------------------------------------------------
+   2. Black & Orange
+   ---------------------------------------------------------------------- */
+[data-theme="orange"] {
+  --color-purple-300: #fed7aa;
+  --color-purple-400: #f97316;
+  --color-purple-500: #fb923c;
+  --color-purple-600: #c2410c;
+  --color-purple-700: #9a3412;
+
+  --color-pink-400: #fbbf24;
+  --color-pink-500: #f59e0b;
+  --color-pink-600: #d97706;
+
+  --color-indigo-500: #c2410c;
+  --color-indigo-700: #9a3412;
+
+  --color-blue-600: #c2410c;
+
+  --swatch-1: #fb923c;
+  --swatch-2: #c2410c;
+
+  --grad-1: #fbbf24;
+  --grad-2: #f59e0b;
+  --grad-3: #f97316;
+  --grad-4: #ea580c;
+  --grad-5: #c2410c;
+
+  --glow-1: #2a140b;
+  --glow-2: #9a3412;
+}
+
+/* -------------------------------------------------------------------------
+   3. Black & Blue
+   ---------------------------------------------------------------------- */
+[data-theme="blue"] {
+  --color-purple-300: #93c5fd;
+  --color-purple-400: #60a5fa;
+  --color-purple-500: #3b82f6;
+  --color-purple-600: #2563eb;
+  --color-purple-700: #1d4ed8;
+
+  --color-pink-400: #38bdf8;
+  --color-pink-500: #0ea5e9;
+  --color-pink-600: #0284c7;
+
+  --color-indigo-500: #1d4ed8;
+  --color-indigo-700: #1e40af;
+
+  --color-blue-600: #2563eb;
+
+  --swatch-1: #60a5fa;
+  --swatch-2: #2563eb;
+
+  --grad-1: #38bdf8;
+  --grad-2: #60a5fa;
+  --grad-3: #3b82f6;
+  --grad-4: #2563eb;
+  --grad-5: #1d4ed8;
+
+  --glow-1: #101a2e;
+  --glow-2: #1e40af;
+}
+
+/* -------------------------------------------------------------------------
+   4. Black & Silver
+   ---------------------------------------------------------------------- */
+[data-theme="silver"] {
+  --color-purple-300: #f8fafc;
+  --color-purple-400: #94a3b8;
+  --color-purple-500: #cbd5e1;
+  --color-purple-600: #64748b;
+  --color-purple-700: #475569;
+
+  --color-pink-400: #f1f5f9;
+  --color-pink-500: #e2e8f0;
+  --color-pink-600: #94a3b8;
+
+  --color-indigo-500: #64748b;
+  --color-indigo-700: #475569;
+
+  --color-blue-600: #64748b;
+
+  --swatch-1: #e2e8f0;
+  --swatch-2: #64748b;
+
+  --grad-1: #ffffff;
+  --grad-2: #e2e8f0;
+  --grad-3: #cbd5e1;
+  --grad-4: #a8b3c2;
+  --grad-5: #94a3b8;
+
+  --glow-1: #1c2027;
+  --glow-2: #4b5569;
+}
+
+/* -------------------------------------------------------------------------
+   5. Black & Green
+   ---------------------------------------------------------------------- */
+[data-theme="green"] {
+  --color-purple-300: #bbf7d0;
+  --color-purple-400: #16a34a;
+  --color-purple-500: #22c55e;
+  --color-purple-600: #15803d;
+  --color-purple-700: #166534;
+
+  --color-pink-400: #34d399;
+  --color-pink-500: #34d399;
+  --color-pink-600: #10b981;
+
+  --color-indigo-500: #16a34a;
+  --color-indigo-700: #166534;
+
+  --color-blue-600: #15803d;
+
+  --swatch-1: #34d399;
+  --swatch-2: #15803d;
+
+  --grad-1: #6ee7b7;
+  --grad-2: #34d399;
+  --grad-3: #22c55e;
+  --grad-4: #16a34a;
+  --grad-5: #15803d;
+
+  --glow-1: #0e2118;
+  --glow-2: #166534;
+}
