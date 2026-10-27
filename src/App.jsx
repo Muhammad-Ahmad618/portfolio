@@ -7,6 +7,7 @@ import ExperiencePage from "./Pages/ExperiencePage/ExperiencePage";
 import ProjectPage from "./Pages/ProjectsPage/ProjectsPage";
 import ContactPage from "./Pages/ContactPage/ContactPage";
 import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
+import ChatWidget from "./components/ChatWidget/ChatWidget";
 import {
   BrowserRouter as Router,
   Routes,
@@ -32,6 +33,7 @@ function App() {
         <Footer />
       </Router>
       <ThemeSwitcher />
+      <ChatWidget />
     </div>
   );
 }
