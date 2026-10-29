@@ -64,14 +64,14 @@ export default function Navbar() {
       path: "/projects",
     },
     {
-      icon: <IoMail />,
-      label: "Contact",
-      path: "/contact",
-    },
-    {
       icon: <MdOutlineVerified />,
       label: "Certificates",
       path: "/certifications",
+    },
+    {
+      icon: <IoMail />,
+      label: "Contact",
+      path: "/contact",
     },
   ];
 
