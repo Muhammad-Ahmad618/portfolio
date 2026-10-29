@@ -6,6 +6,7 @@ import SkillsPage from "./Pages/SkillsPage/SkillsPage";
 import ExperiencePage from "./Pages/ExperiencePage/ExperiencePage";
 import ProjectPage from "./Pages/ProjectsPage/ProjectsPage";
 import ContactPage from "./Pages/ContactPage/ContactPage";
+import CertificationsPage from "./Pages/CertificationsPage/CertificationsPage";
 import ThemeSwitcher from "./components/ThemeSwitcher/ThemeSwitcher";
 import ChatWidget from "./components/ChatWidget/ChatWidget";
 import {
@@ -27,6 +28,7 @@ function App() {
             <Route path="/experience" element={<ExperiencePage />} />
             <Route path="/projects" element={<ProjectPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/certifications" element={<CertificationsPage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>

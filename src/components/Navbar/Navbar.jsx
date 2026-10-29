@@ -4,6 +4,7 @@ import { FaCode } from "react-icons/fa";
 import { FaLaptopCode } from "react-icons/fa";
 import { BsFillSuitcaseLgFill } from "react-icons/bs";
 import { IoMail } from "react-icons/io5";
+import { MdOutlineVerified } from "react-icons/md";
 import { NavLink } from "react-router-dom";
 import { RiMenu3Line } from "react-icons/ri";
 import { Fade } from "react-awesome-reveal";
@@ -66,6 +67,11 @@ export default function Navbar() {
       icon: <IoMail />,
       label: "Contact",
       path: "/contact",
+    },
+    {
+      icon: <MdOutlineVerified />,
+      label: "Certificates",
+      path: "/certifications",
     },
   ];
 
