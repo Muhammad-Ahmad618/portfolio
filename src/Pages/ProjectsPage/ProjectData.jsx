@@ -17,6 +17,8 @@ import {
   SiShadcnui,
   SiGraphql,
   SiPostgresql,
+  SiSocketdotio,
+  SiGooglegemini,
 } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import { GiBearFace } from "react-icons/gi";
@@ -24,6 +26,28 @@ import { LuBoxes } from "react-icons/lu";
 
 export const allProjects = [
   // Web Projects
+
+  {
+    thumbnail: "/doable.webp",
+    title: "Doable",
+    category: "Web",
+    icon: FaCode,
+    type: "Smart Task Manager & Workspace",
+    description:
+      "A smart task manager and workspace application designed to streamline team collaboration, task tracking, and document sharing.",
+    url: "https://doable-eta.vercel.app/",
+    github: "https://github.com/Muhammad-Ahmad618/doable",
+    tech_stack: [
+      { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
+      { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
+      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
+      { name: "Node.js", icon: RiNodejsLine, color: "text-green-500" },
+      { name: "Express.js", icon: SiExpress, color: "text-white" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-400" },
+      { name: "Socket io", icon: SiSocketdotio, color: "text-white" },
+      { name: "Ai Integration", icon: SiGooglegemini, color: "text-sky-600" },
+    ],
+  },
   {
     thumbnail: "/fusion-wok.webp",
     title: "Fusion Wok",
@@ -39,25 +63,6 @@ export const allProjects = [
       { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
       { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
       { name: "Context API", icon: LuBoxes, color: "text-cyan-400" },
-    ],
-  },
-  {
-    thumbnail: "/under_development.png",
-    title: "Doable",
-    category: "Web",
-    icon: FaCode,
-    type: "Smart Task Manager & Workspace",
-    description:
-      "A smart task manager and workspace application designed to streamline team collaboration, task tracking, and document sharing. (Currently in development)",
-    url: "",
-    github: "https://github.com/Muhammad-Ahmad618/vanta",
-    tech_stack: [
-      { name: "Next.js", icon: SiNextdotjs, color: "text-white" },
-      { name: "TypeScript", icon: SiTypescript, color: "text-blue-400" },
-      { name: "Tailwind CSS", icon: RiTailwindCssFill, color: "text-blue-500" },
-      { name: "Node.js", icon: RiNodejsLine, color: "text-green-500" },
-      { name: "Express.js", icon: SiExpress, color: "text-white" },
-      { name: "PostgreSQL", icon: SiPostgresql, color: "text-sky-400" },
     ],
   },
   {
